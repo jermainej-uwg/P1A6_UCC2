@@ -538,3 +538,316 @@ body#discussion {
     }
 }
 
+
+/* Multimedia page styles */
+body#multimedia {
+    --media-max: 1100px;
+    --featured-thumb: 320px;
+    --gutter: 20px;
+}
+
+/* Hero changes */
+#multimedia-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 28px;
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+}
+
+body#multimedia .hero-title {
+    font-size: 40px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#multimedia .hero-sub {
+    color: var(--muted);
+    margin: 10px 0 18px;
+}
+
+/* Featured grid */
+#featured .walk-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gutter);
+}
+
+body#multimedia .walk-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--card);
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#multimedia .walk-card .thumb img {
+        width: var(--featured-thumb);
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+/* Reviews and media section */
+body#multimedia .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--gutter);
+    align-items: start;
+}
+
+body#multimedia .review-card {
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--card);
+    border: 1px solid rgba(11,17,32,0.04);
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Latest hardware list */
+body#multimedia .latest-list {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+}
+
+body#multimedia .game-card {
+    flex: 1 1 30%;
+    min-width: 220px;
+    background: var(--card);
+    padding: 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+/* Embedded media thumbnails */
+body#multimedia .media-thumb {
+    width: 100%;
+    height: 160px;
+    background: #111827;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+
+/* Responsive */
+@media (max-width: 980px) {
+    #multimedia-hero {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    #featured .walk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#multimedia .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#multimedia .game-card {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .main-nav {
+        display: none;
+    }
+
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    body#multimedia .hero-title {
+        font-size: 28px;
+    }
+
+    body#multimedia .walk-card {
+        flex-direction: column;
+    }
+
+        body#multimedia .walk-card .thumb img {
+            width: 100%;
+            height: 160px;
+        }
+}
+
+/* News page styles */
+body#news {
+    --news-max: 1100px;
+    --tile-min: 220px;
+    --gutter: 20px;
+}
+
+/* Hero and lead story */
+#news-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 28px;
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 24px;
+}
+
+body#news .hero-title {
+    font-size: 40px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#news .hero-sub {
+    color: var(--muted);
+    margin: 10px 0 18px;
+}
+
+/* Lead content column */
+#news-hero .lead {
+    max-width: 720px;
+}
+
+    #news-hero .lead p {
+        margin: 0 0 12px;
+        line-height: 1.65;
+        color: var(--text);
+        font-size: 16px;
+    }
+
+/* Related products grid */
+.related-products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--tile-min), 1fr));
+    gap: var(--gutter);
+    margin-top: 12px;
+}
+
+.product-tile {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+.product-thumb {
+    width: 96px;
+    height: 64px;
+    border-radius: 6px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.product-meta h4 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text);
+}
+
+.product-meta p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* News list and cards */
+.news-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.news-card {
+    background: var(--card);
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    .news-card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    .news-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+/* Social icons block (footer area) */
+.news-social {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+    .news-social .icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: rgba(11,17,32,0.06);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text);
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    #news-hero {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .related-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .related-products {
+        grid-template-columns: 1fr;
+    }
+
+    .product-thumb {
+        width: 100%;
+        height: 140px;
+        border-radius: 8px;
+    }
+
+    .product-tile {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    body#news .hero-title {
+        font-size: 28px;
+    }
+}
