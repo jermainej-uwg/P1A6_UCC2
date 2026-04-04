@@ -139,34 +139,6 @@ a {
     box-shadow: 0 6px 18px rgba(11,17,32,0.04);
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-}
-
-    .btn.primary {
-        background: var(--accent);
-        color: #fff;
-        box-shadow: 0 6px 18px rgba(255,107,107,0.12);
-    }
-
-    .btn.ghost {
-        background: transparent;
-        color: var(--text);
-        border: 1px solid rgba(11,17,32,0.04);
-    }
-
-    .btn.outline {
-        background: transparent;
-        color: var(--text);
-        border: 1px solid rgba(11,17,32,0.06);
-    }
-
 /* Sections */
 .section-title {
     margin: 0 0 12px;
@@ -174,7 +146,7 @@ a {
     color: var(--text);
 }
 
-/* Walkthroughs */
+/* Walkthroughs page styles */
 .walk-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -209,7 +181,7 @@ a {
     font-size: 14px;
 }
 
-/* Reviews */
+/* Reviews page styles */
 .reviews-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2320,5 +2292,163 @@ body#hardware-reviews .site-footer {
 
     body#hardware-reviews .hero-title {
         font-size: 28px;
+    }
+}
+
+/* Discussions page styles */
+body#discussions {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #c62828;
+    --muted-color: #6b7280;
+    --bg-card: #ffffff;
+    --text-color: #0b1220;
+}
+
+    /* Page container */
+    body#discussions .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#discuss-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#discussions .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text-color);
+}
+
+body#discussions .hero-sub {
+    color: var(--muted-color);
+    margin-top: 8px;
+}
+
+body#discussions .hero-content p a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+    body#discussions .hero-content p a:hover,
+    body#discussions .hero-content p a:focus {
+        text-decoration: underline;
+        color: #b71c1c;
+    }
+
+/* Post form */
+body#discussions .post-form {
+    background: var(--bg-card);
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(11,17,32,0.04);
+    max-width: 920px;
+}
+
+    body#discussions .post-form label {
+        color: var(--muted-color);
+        font-size: 13px;
+        display: block;
+    }
+
+    body#discussions .post-form input[type="text"],
+    body#discussions .post-form textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(11,17,32,0.08);
+        background: #fff;
+        color: var(--text-color);
+        font-size: 15px;
+        box-sizing: border-box;
+    }
+
+    body#discussions .post-form textarea {
+        resize: vertical;
+        min-height: 120px;
+    }
+
+/* Inline helper text */
+body#discussions .muted {
+    color: var(--muted-color);
+    font-size: 13px;
+}
+
+/* Posts list and cards */
+#posts-list {
+    max-width: 920px;
+}
+
+    #posts-list .card {
+        background: var(--bg-card);
+        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        margin-bottom: 12px;
+        color: var(--text-color);
+    }
+
+        #posts-list .card:focus {
+            outline: 3px solid rgba(11,17,32,0.04);
+            outline-offset: 2px;
+        }
+
+        #posts-list .card strong {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 15px;
+        }
+
+        #posts-list .card .muted {
+            font-size: 13px;
+            color: var(--muted-color);
+        }
+
+    /* Empty state */
+    #posts-list .muted.empty {
+        padding: 12px 0;
+    }
+
+/* Small utilities */
+body#discussions .site-footer {
+    margin-top: 36px;
+}
+
+/* Focusable interactive elements */
+body#discussions a:focus,
+body#discussions button:focus,
+body#discussions input:focus,
+body#discussions textarea:focus {
+    box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+    border-color: rgba(198,40,40,0.35);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#discussions #discuss-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    body#discussions .hero-title {
+        font-size: 28px;
+    }
+
+    body#discussions .card {
+        padding: 12px;
     }
 }
