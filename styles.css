@@ -3473,3 +3473,538 @@ body#platforms {
         flex: 0 0 84px;
     }
 }
+
+/* PC page styles */
+body#platform-pc {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #c62828;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#platform-pc .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#platform-pc #pc-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#platform-pc .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#platform-pc .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#platform-pc .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#platform-pc .hero-content a:hover,
+        body#platform-pc .hero-content a:focus {
+            text-decoration: underline;
+            color: #b71c1c;
+        }
+
+    /* Card grid used for news and hardware sections */
+    body#platform-pc .card-grid {
+        display: grid;
+        gap: var(--gutter);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body#platform-pc .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+        body#platform-pc .card h3 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 18px;
+        }
+
+        body#platform-pc .card p {
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        body#platform-pc .card .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Inline thumbnail and content layout for news items */
+        body#platform-pc .card[style*="grid-template-columns"] {
+            gap: 12px;
+            align-items: start;
+        }
+
+        body#platform-pc .card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    /* Hardware notes grid */
+    body#platform-pc #hardware .card {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Focus */
+    body#platform-pc a:focus,
+    body#platform-pc button:focus,
+    body#platform-pc input:focus,
+    body#platform-pc textarea:focus {
+        box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+        border-color: rgba(198,40,40,0.35);
+        outline: none;
+    }
+
+    /* Footer spacing */
+    body#platform-pc .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#platform-pc #pc-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#platform-pc .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    body#platform-pc .hero-title {
+        font-size: 28px;
+    }
+
+    body#platform-pc .card {
+        padding: 12px;
+    }
+}
+
+/* Xbox page styles */
+body#platform-xbox {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #107c10;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#platform-xbox .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#platform-xbox #xbox-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(16,124,16,0.03), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#platform-xbox .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#platform-xbox .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#platform-xbox .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#platform-xbox .hero-content a:hover,
+        body#platform-xbox .hero-content a:focus {
+            text-decoration: underline;
+            color: #0b5f0b;
+        }
+
+    /* Card grid for news items */
+    body#platform-xbox .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gutter);
+    }
+
+    body#platform-xbox .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+        body#platform-xbox .card h3 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 18px;
+        }
+
+        body#platform-xbox .card p {
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        body#platform-xbox .card .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Inline thumbnail and content layout used in markup */
+        body#platform-xbox .card[style*="grid-template-columns"] {
+            gap: 12px;
+            align-items: start;
+        }
+
+        body#platform-xbox .card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    /* Game Pass and notes grid */
+    body#platform-xbox #gamepass .card {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Related product tiles */
+    body#platform-xbox .product-tile {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    body#platform-xbox .product-link {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    body#platform-xbox .product-thumb {
+        width: 96px;
+        height: 64px;
+        flex: 0 0 96px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #111827;
+    }
+
+        body#platform-xbox .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+        }
+
+    /* Focus */
+    body#platform-xbox a:focus,
+    body#platform-xbox button:focus,
+    body#platform-xbox input:focus,
+    body#platform-xbox textarea:focus {
+        box-shadow: 0 0 0 3px rgba(16,124,16,0.12);
+        border-color: rgba(16,124,16,0.25);
+        outline: none;
+    }
+
+    body#platform-xbox .product-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(16,124,16,0.12);
+        border-radius: 8px;
+    }
+
+    /* Small utilities */
+    body#platform-xbox .muted {
+        color: var(--muted);
+    }
+
+    body#platform-xbox .section-title {
+        font-size: 20px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    /* Footer spacing */
+    body#platform-xbox .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#platform-xbox #xbox-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#platform-xbox .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    body#platform-xbox .hero-title {
+        font-size: 28px;
+    }
+
+    body#platform-xbox .product-thumb {
+        width: 84px;
+        height: 56px;
+        flex: 0 0 84px;
+    }
+}
+
+/* PlayStation News page styles */
+body#platform-playstation {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #003791;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#platform-playstation .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#platform-playstation #ps-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(0,55,145,0.03), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#platform-playstation .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#platform-playstation .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#platform-playstation .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#platform-playstation .hero-content a:hover,
+        body#platform-playstation .hero-content a:focus {
+            text-decoration: underline;
+            color: #002f6f;
+        }
+
+    /* Generic card grid used across sections */
+    body#platform-playstation .card-grid {
+        display: grid;
+        gap: var(--gutter);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body#platform-playstation .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+        body#platform-playstation .card h3 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 18px;
+        }
+
+        body#platform-playstation .card p {
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        body#platform-playstation .card .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Inline thumbnail and content layout for news items */
+        body#platform-playstation .card[style*="grid-template-columns"] {
+            gap: 12px;
+            align-items: start;
+        }
+
+        body#platform-playstation .card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    /* Exclusives and spotlight cards */
+    body#platform-playstation #exclusives .card {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Related product tiles */
+    body#platform-playstation .product-tile {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    body#platform-playstation .product-link {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    body#platform-playstation .product-thumb {
+        width: 96px;
+        height: 64px;
+        flex: 0 0 96px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #111827;
+    }
+
+        body#platform-playstation .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+        }
+
+    /* Focus */
+    body#platform-playstation a:focus,
+    body#platform-playstation button:focus,
+    body#platform-playstation input:focus,
+    body#platform-playstation textarea:focus {
+        box-shadow: 0 0 0 3px rgba(0,55,145,0.12);
+        border-color: rgba(0,55,145,0.25);
+        outline: none;
+    }
+
+    body#platform-playstation .product-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(0,55,145,0.12);
+        border-radius: 8px;
+    }
+
+    /* Small utilities */
+    body#platform-playstation .muted {
+        color: var(--muted);
+    }
+
+    body#platform-playstation .section-title {
+        font-size: 20px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    /* Footer spacing */
+    body#platform-playstation .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#platform-playstation #ps-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#platform-playstation .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    body#platform-playstation .hero-title {
+        font-size: 28px;
+    }
+
+    body#platform-playstation .product-thumb {
+        width: 84px;
+        height: 56px;
+        flex: 0 0 84px;
+    }
+}
