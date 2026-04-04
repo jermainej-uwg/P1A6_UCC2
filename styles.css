@@ -2953,3 +2953,523 @@ body#gameplay-breakdown {
         gap: 12px;
     }
 }
+
+/* Content Creator Updates page styles */
+body#creator-updates {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #c62828;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#creator-updates .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+    /* Hero */
+    body#creator-updates #cu-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#creator-updates .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#creator-updates .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#creator-updates .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#creator-updates .hero-content a:hover,
+        body#creator-updates .hero-content a:focus {
+            text-decoration: underline;
+            color: #b71c1c;
+        }
+
+    /* Subscribe CTA */
+    body#creator-updates .subscribe-form {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        max-width: 720px;
+    }
+
+        body#creator-updates .subscribe-form input[type="email"] {
+            flex: 1;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(11,17,32,0.06);
+            font-size: 15px;
+            color: var(--text);
+            background: #fff;
+        }
+
+        body#creator-updates .subscribe-form .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border-radius: 8px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+            body#creator-updates .subscribe-form .btn:focus {
+                outline: 3px solid rgba(198,40,40,0.18);
+                outline-offset: 3px;
+            }
+
+    /* Updates list and cards */
+    body#creator-updates .card-grid {
+        display: grid;
+        gap: 14px;
+    }
+
+        body#creator-updates .card-grid > .card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            border: 1px solid rgba(11,17,32,0.04);
+            padding: 12px;
+            box-sizing: border-box;
+        }
+
+            body#creator-updates .card-grid > .card[style*="grid-template-columns"] {
+                gap: 12px;
+                align-items: start;
+            }
+
+    body#creator-updates .card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    body#creator-updates .card h3 {
+        margin: 0 0 6px;
+        color: var(--text);
+        font-size: 18px;
+    }
+
+    body#creator-updates .card p {
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    body#creator-updates .card .muted {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    /* Archive CTA */
+    body#creator-updates .content-section .btn {
+        display: inline-flex;
+        padding: 10px 14px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    /* Footer spacing */
+    body#creator-updates .site-footer {
+        margin-top: 36px;
+    }
+
+    /* Focus styles */
+    body#creator-updates a:focus,
+    body#creator-updates button:focus,
+    body#creator-updates input:focus,
+    body#creator-updates textarea:focus {
+        box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+        border-color: rgba(198,40,40,0.35);
+        outline: none;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#creator-updates #cu-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#creator-updates .card-grid {
+        grid-auto-rows: auto;
+    }
+}
+
+@media (max-width: 560px) {
+    body#creator-updates .hero-title {
+        font-size: 28px;
+    }
+
+    body#creator-updates .subscribe-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+        body#creator-updates .subscribe-form .btn {
+            width: 100%;
+        }
+
+    body#creator-updates .card-grid > .card[style*="grid-template-columns"] {
+        display: grid !important;
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Small utility */
+body#creator-updates .muted {
+    color: var(--muted);
+}
+
+body#creator-updates .section-title {
+    font-size: 20px;
+    margin: 0 0 8px;
+    color: var(--text);
+}
+
+/* Game Releases page styles */
+body#game-releases {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #c62828;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#game-releases .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#game-releases #gr-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#game-releases .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#game-releases .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#game-releases .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#game-releases .hero-content a:hover,
+        body#game-releases .hero-content a:focus {
+            text-decoration: underline;
+            color: #b71c1c;
+        }
+
+    /* Generic card grid used across sections */
+    body#game-releases .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gutter);
+    }
+
+    body#game-releases .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+        body#game-releases .card h3 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 18px;
+        }
+
+        body#game-releases .card p {
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        body#game-releases .card .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Responsive video/image placeholders inside cards */
+        body#game-releases .card figure {
+            margin: 0;
+        }
+
+        body#game-releases .card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+    /* Platforms overview cards (compact) */
+    body#game-releases #platforms .card {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Focus styles */
+    body#game-releases a:focus,
+    body#game-releases button:focus,
+    body#game-releases input:focus,
+    body#game-releases textarea:focus {
+        box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+        border-color: rgba(198,40,40,0.35);
+        outline: none;
+    }
+
+    /* Footer spacing */
+    body#game-releases .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#game-releases #gr-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#game-releases .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#game-releases .related-products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    body#game-releases .hero-title {
+        font-size: 28px;
+    }
+
+    body#game-releases .related-products {
+        grid-template-columns: 1fr;
+    }
+
+    body#game-releases .product-thumb {
+        width: 84px;
+        height: 56px;
+        flex: 0 0 84px;
+    }
+}
+
+/* Platforms page styles */
+body#platforms {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #c62828;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#platforms .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#platforms #platforms-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#platforms .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#platforms .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#platforms .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#platforms .hero-content a:hover,
+        body#platforms .hero-content a:focus {
+            text-decoration: underline;
+            color: #b71c1c;
+        }
+
+    /* Platform grid */
+    body#platforms .card-grid {
+        display: grid;
+        gap: var(--gutter);
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    body#platforms .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 12px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    /* Product link and thumb */
+    body#platforms .product-link {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+        width: 100%;
+    }
+
+    body#platforms .product-thumb {
+        width: 96px;
+        height: 64px;
+        flex: 0 0 96px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #111827;
+    }
+
+        body#platforms .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+        }
+
+    body#platforms .product-meta h4 {
+        margin: 0;
+        font-size: 16px;
+        color: var(--text);
+    }
+
+    body#platforms .product-meta .muted {
+        margin-top: 6px;
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    /* Focus and keyboard */
+    body#platforms .product-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+        border-radius: 8px;
+    }
+
+    body#platforms a:focus,
+    body#platforms button:focus,
+    body#platforms input:focus,
+    body#platforms textarea:focus {
+        box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
+        border-color: rgba(198,40,40,0.35);
+        outline: none;
+    }
+
+    /* Small utilities */
+    body#platforms .muted {
+        color: var(--muted);
+    }
+
+    body#platforms .section-title {
+        font-size: 20px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    /* Footer spacing */
+    body#platforms .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#platforms #platforms-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#platforms .card {
+        align-items: center;
+    }
+}
+
+@media (max-width: 560px) {
+    body#platforms .hero-title {
+        font-size: 28px;
+    }
+
+    body#platforms .product-thumb {
+        width: 84px;
+        height: 56px;
+        flex: 0 0 84px;
+    }
+}
