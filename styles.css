@@ -851,3 +851,457 @@ body#news .hero-sub {
         font-size: 28px;
     }
 }
+
+/*  Walkthroughs page styles */
+body#walkthroughs {
+    --walk-max: 1100px;
+    --thumb-w: 240px;
+    --gutter: 20px;
+    --card-radius: 12px;
+}
+
+    /* Page container */
+    body#walkthroughs .site > main {
+        max-width: var(--walk-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#walkthroughs-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#walkthroughs .hero-title {
+    font-size: 40px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#walkthroughs .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Walk grid and cards */
+.walk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+body#walkthroughs .walk-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#walkthroughs .walk-card .thumb {
+        width: var(--thumb-w);
+        height: 140px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #111827;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        body#walkthroughs .walk-card .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+.walk-meta h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.walk-meta p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* News list */
+.news-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.news-card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    .news-card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+/* Categories and links */
+#categories ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+#categories li {
+    background: rgba(11,17,32,0.03);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* Footer spacing specific to this page */
+body#walkthroughs .site-footer {
+    margin-top: 36px;
+}
+
+/* Utility */
+body#walkthroughs .muted {
+    color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    #walkthroughs-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .walk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#walkthroughs .walk-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    body#walkthroughs .walk-card {
+        flex-direction: column;
+    }
+
+        body#walkthroughs .walk-card .thumb {
+            width: 100%;
+            height: 160px;
+        }
+
+    body#walkthroughs .hero-title {
+        font-size: 28px;
+    }
+}
+
+/* Easter Eggs page styles */
+body#easter-eggs {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+}
+
+    /* Page container */
+    body#easter-eggs .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#easter-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(14,20,30,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#easter-eggs .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#easter-eggs .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Card grid */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+/* Card */
+.card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+.card-thumb {
+    width: var(--thumb-w);
+    height: 140px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0b1220;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .card-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+.card-body h3 {
+    margin: 0 0 8px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+.card-body p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.5;
+}
+
+/* Secret quest card variant */
+#secret-quests .card {
+    align-items: flex-start;
+}
+
+#secret-quests ol {
+    margin: 10px 0 0 18px;
+    color: var(--text);
+}
+
+/* Lore links and small cards */
+#lore-links .card {
+    padding: 12px;
+    display: block;
+}
+
+#lore-links .card-body p a {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+/* Contribute section spacing */
+#contribute {
+    margin-top: 18px;
+}
+
+/* Footer spacing */
+body#easter-eggs .site-footer {
+    margin-top: 36px;
+}
+
+/* Utility */
+body#easter-eggs .muted {
+    color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    #easter-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card-thumb {
+        width: 100%;
+        height: 160px;
+    }
+
+    .hero-title {
+        font-size: 28px;
+    }
+}
+
+/* Game Lore page styles */
+body#game-lore {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+}
+
+    /* Page container */
+    body#game-lore .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#lore-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#game-lore .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#game-lore .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Card grid and cards */
+body#game-lore .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+body#game-lore .content-section .card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#game-lore .content-section .card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+        font-size: 18px;
+    }
+
+    body#game-lore .content-section .card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+/* Special layout for timeline / long content */
+body#game-lore #overview .card,
+body#game-lore #npc-dialogue .card {
+    display: block;
+}
+
+    /* Lists and transcripts */
+    body#game-lore #npc-dialogue .card ul,
+    body#game-lore #npc-dialogue .card ol {
+        margin: 10px 0 0 18px;
+        color: var(--text);
+        line-height: 1.45;
+    }
+
+/* Theories grid (compact cards) */
+body#game-lore #theories .card {
+    padding: 12px;
+}
+
+    body#game-lore #theories .card h3 {
+        font-size: 16px;
+    }
+
+/* Related links */
+body#game-lore #related ul {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+body#game-lore #related li {
+    background: rgba(11,17,32,0.03);
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+/* Footer spacing */
+body#game-lore .site-footer {
+    margin-top: 36px;
+}
+
+/* Utility */
+body#game-lore .muted {
+    color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#game-lore #lore-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#game-lore .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    body#game-lore .card {
+        padding: 12px;
+    }
+
+    body#game-lore .hero-title {
+        font-size: 28px;
+    }
+}
