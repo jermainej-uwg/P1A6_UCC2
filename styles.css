@@ -1808,3 +1808,517 @@ body#achievements .site-footer {
         font-size: 28px;
     }
 }
+
+/* Reviews page styles */
+body#reviews {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+}
+
+    /* Page container */
+    body#reviews .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#reviews-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#reviews .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#reviews .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Quick links in hero */
+body#reviews .hero-content p a {
+    text-decoration: none;
+}
+
+    body#reviews .hero-content p a:hover {
+        text-decoration: underline;
+    }
+
+/* Card grid and generic cards */
+body#reviews .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+body#reviews .card,
+body#reviews .news-card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: var(--card-radius);
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#reviews .card h3,
+    body#reviews .news-card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+        font-size: 18px;
+    }
+
+    body#reviews .card p,
+    body#reviews .news-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+/* Featured game reviews */
+body#reviews #featured-reviews .card-thumb,
+body#reviews #featured-hardware .card-thumb {
+    width: var(--thumb-w);
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0b1220;
+    display: block;
+    margin-bottom: 10px;
+}
+
+body#reviews .card-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hardware and game sections share layout */
+body#reviews #featured-hardware .card,
+body#reviews #featured-reviews .card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+body#reviews .card .card-body {
+    flex: 1;
+}
+
+/* Archive list */
+body#reviews #review-archive .card-grid {
+    margin-top: 12px;
+}
+
+/* Scoring rubric card */
+body#reviews #scoring-rubric .card {
+    margin-top: 12px;
+}
+
+/* Lists and inline lists */
+body#reviews ol,
+body#reviews ul {
+    margin: 10px 0 0 18px;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+/* CTA and utilities */
+body#reviews .cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+body#reviews .muted {
+    color: var(--muted);
+}
+
+/* Footer spacing */
+body#reviews .site-footer {
+    margin-top: 36px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#reviews #reviews-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#reviews .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#reviews #featured-reviews .card,
+    body#reviews #featured-hardware .card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    body#reviews #featured-reviews .card,
+    body#reviews #featured-hardware .card {
+        flex-direction: column;
+    }
+
+    body#reviews .card-thumb {
+        width: 100%;
+        height: 160px;
+    }
+
+    body#reviews .hero-title {
+        font-size: 28px;
+    }
+}
+
+/* Game Reviews page styles */
+body#game-reviews {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+}
+
+    /* Page container */
+    body#game-reviews .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#gr-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#game-reviews .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#game-reviews .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Quick links in hero */
+body#game-reviews .hero-content p a {
+    text-decoration: none;
+}
+
+    body#game-reviews .hero-content p a:hover {
+        text-decoration: underline;
+    }
+
+/* Card grid and generic cards */
+body#game-reviews .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+body#game-reviews .card,
+body#game-reviews .news-card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: var(--card-radius);
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#game-reviews .card h3,
+    body#game-reviews .news-card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+        font-size: 18px;
+    }
+
+    body#game-reviews .card p,
+    body#game-reviews .news-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+/* Featured game cards */
+body#game-reviews #featured-games .card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+body#game-reviews .card-thumb {
+    width: var(--thumb-w);
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0b1220;
+    flex-shrink: 0;
+    display: block;
+}
+
+    body#game-reviews .card-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+body#game-reviews .card .card-body {
+    flex: 1;
+}
+
+/* Deep dive and archive cards */
+body#game-reviews #deep-dives .card,
+body#game-reviews #archive .card {
+    margin-top: 12px;
+}
+
+/* Lists and inline notes */
+body#game-reviews ol,
+body#game-reviews ul {
+    margin: 10px 0 0 18px;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+/* Utilities */
+body#game-reviews .muted {
+    color: var(--muted);
+}
+
+body#game-reviews .cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+/* Footer spacing */
+body#game-reviews .site-footer {
+    margin-top: 36px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#game-reviews #gr-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#game-reviews .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#game-reviews #featured-games .card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    body#game-reviews #featured-games .card {
+        flex-direction: column;
+    }
+
+    body#game-reviews .card-thumb {
+        width: 100%;
+        height: 160px;
+    }
+
+    body#game-reviews .hero-title {
+        font-size: 28px;
+    }
+}
+
+/* Hardware Reviews page styles */
+body#hardware-reviews {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+    --accent: #c62828;
+}
+
+    /* Page container */
+    body#hardware-reviews .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#hw-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#hardware-reviews .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#hardware-reviews .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Hero quick links */
+body#hardware-reviews .hero-content p a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+    body#hardware-reviews .hero-content p a:hover,
+    body#hardware-reviews .hero-content p a:focus {
+        color: #b71c1c;
+        text-decoration: underline;
+    }
+
+/* Card grid and generic cards */
+body#hardware-reviews .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+body#hardware-reviews .card,
+body#hardware-reviews .news-card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: var(--card-radius);
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#hardware-reviews .card h3,
+    body#hardware-reviews .news-card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+        font-size: 18px;
+    }
+
+    body#hardware-reviews .card p,
+    body#hardware-reviews .news-card p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+    }
+
+/* Featured hardware cards */
+body#hardware-reviews #featured-hardware .card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+body#hardware-reviews .card-thumb {
+    width: var(--thumb-w);
+    height: 140px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #0b1220;
+    flex-shrink: 0;
+    display: block;
+}
+
+    body#hardware-reviews .card-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+body#hardware-reviews .card .card-body {
+    flex: 1;
+}
+
+/* Testing methods and archive cards */
+body#hardware-reviews #testing-methods .card,
+body#hardware-reviews #hardware-archive .card {
+    margin-top: 12px;
+}
+
+/* Lists and inline notes */
+body#hardware-reviews ol,
+body#hardware-reviews ul {
+    margin: 10px 0 0 18px;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+/* Utilities */
+body#hardware-reviews .muted {
+    color: var(--muted);
+}
+
+body#hardware-reviews .cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+/* Footer spacing */
+body#hardware-reviews .site-footer {
+    margin-top: 36px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#hardware-reviews #hw-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#hardware-reviews .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#hardware-reviews #featured-hardware .card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    body#hardware-reviews #featured-hardware .card {
+        flex-direction: column;
+    }
+
+    body#hardware-reviews .card-thumb {
+        width: 100%;
+        height: 160px;
+    }
+
+    body#hardware-reviews .hero-title {
+        font-size: 28px;
+    }
+}
