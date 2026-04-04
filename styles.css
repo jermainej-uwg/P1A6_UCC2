@@ -1305,3 +1305,506 @@ body#game-lore .muted {
         font-size: 28px;
     }
 }
+
+/* Guides page styles */
+body#guides {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+}
+
+    /* Page container */
+    body#guides .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#guides-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#guides .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#guides .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Card grid and guide cards */
+body#guides .card-grid,
+body#guides .walk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+/* Generic card */
+body#guides .card,
+body#guides .news-card,
+body#guides .walk-card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+/* Walk card layout */
+body#guides .walk-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+}
+
+    body#guides .walk-card .thumb {
+        width: var(--thumb-w);
+        height: 140px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #0b1220;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        body#guides .walk-card .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+body#guides .walk-meta h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+body#guides .walk-meta p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* News and guide list */
+body#guides .news-list {
+    display: grid;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+body#guides .news-card h3 {
+    margin: 0 0 8px;
+    color: var(--text);
+}
+
+/* Builds and tools sections */
+body#guides .walk-grid .walk-card,
+body#guides .card-grid .card {
+    align-items: flex-start;
+}
+
+/* CTA and small utilities */
+body#guides .cta {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+    body#guides .cta .muted {
+        margin: 0;
+    }
+
+/* Footer spacing */
+body#guides .site-footer {
+    margin-top: 36px;
+}
+
+/* Utility */
+body#guides .muted {
+    color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#guides #guides-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#guides .card-grid,
+    body#guides .walk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#guides .walk-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    body#guides .walk-card {
+        flex-direction: column;
+    }
+
+        body#guides .walk-card .thumb {
+            width: 100%;
+            height: 160px;
+        }
+
+    body#guides .hero-title {
+        font-size: 28px;
+    }
+}
+
+/* Gameplay Walkthroughs page styles */
+body#gameplay-walkthroughs {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 240px;
+}
+
+    /* Page container */
+    body#gameplay-walkthroughs .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#gw-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#gameplay-walkthroughs .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#gameplay-walkthroughs .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Walk grid and cards */
+body#gameplay-walkthroughs .walk-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+}
+
+body#gameplay-walkthroughs .walk-card {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#gameplay-walkthroughs .walk-card .thumb {
+        width: var(--thumb-w);
+        height: 140px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #0b1220;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        body#gameplay-walkthroughs .walk-card .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+body#gameplay-walkthroughs .walk-meta h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+body#gameplay-walkthroughs .walk-meta p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Boss strategies and achievement cards */
+body#gameplay-walkthroughs .news-card,
+body#gameplay-walkthroughs .news-list article {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(11,17,32,0.04);
+}
+
+    body#gameplay-walkthroughs .news-card h3 {
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+/* Lists and checklists */
+body#gameplay-walkthroughs ol,
+body#gameplay-walkthroughs ul {
+    margin: 10px 0 0 18px;
+    color: var(--text);
+    line-height: 1.45;
+}
+
+/* CTA and small utilities */
+body#gameplay-walkthroughs .cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+body#gameplay-walkthroughs .muted {
+    color: var(--muted);
+}
+
+/* Footer spacing */
+body#gameplay-walkthroughs .site-footer {
+    margin-top: 36px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#gameplay-walkthroughs #gw-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#gameplay-walkthroughs .walk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#gameplay-walkthroughs .walk-card {
+        flex-direction: row;
+    }
+}
+
+@media (max-width: 560px) {
+    body#gameplay-walkthroughs .walk-card {
+        flex-direction: column;
+    }
+
+        body#gameplay-walkthroughs .walk-card .thumb {
+            width: 100%;
+            height: 160px;
+        }
+
+    body#gameplay-walkthroughs .hero-title {
+        font-size: 28px;
+    }
+}
+
+/* Achievements page styles */
+body#achievements {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --thumb-w: 320px;
+}
+
+    /* Page container */
+    body#achievements .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+    }
+
+/* Hero */
+#achieve-hero {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gutter);
+    align-items: center;
+    padding: 22px;
+    border-radius: var(--card-radius);
+    background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
+    box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+    margin-bottom: 28px;
+}
+
+body#achievements .hero-title {
+    font-size: 36px;
+    margin: 0;
+    color: var(--text);
+}
+
+body#achievements .hero-sub {
+    color: var(--muted);
+    margin-top: 8px;
+}
+
+/* Filters toolbar */
+body#achievements .filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+    body#achievements .filters button {
+        background: rgba(11,17,32,0.03);
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 8px 12px;
+        border-radius: 8px;
+        cursor: pointer;
+        color: var(--text);
+    }
+
+        body#achievements .filters button[aria-pressed="true"] {
+            background: var(--accent);
+            color: #fff;
+            border-color: rgba(11,17,32,0.06);
+        }
+
+/* Achievement grid and cards */
+body#achievements .achieve-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--gutter);
+    margin-top: 12px;
+}
+
+body#achievements .achieve-card {
+    background: var(--card);
+    padding: 14px;
+    border-radius: var(--card-radius);
+    border: 1px solid rgba(11,17,32,0.04);
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+    body#achievements .achieve-card .thumb {
+        width: var(--thumb-w);
+        height: 100px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #0b1220;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        body#achievements .achieve-card .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+body#achievements .achieve-meta h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 18px;
+}
+
+body#achievements .achieve-meta p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Checklist and step-by-step guides */
+body#achievements .checklist {
+    background: var(--card);
+    padding: 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(11,17,32,0.04);
+    margin-top: 12px;
+}
+
+    body#achievements .checklist ol,
+    body#achievements .checklist ul {
+        margin: 10px 0 0 18px;
+        line-height: 1.5;
+        color: var(--text);
+    }
+
+/* Lists and checklists inside cards */
+body#achievements .achieve-card ol,
+body#achievements .achieve-card ul {
+    margin: 8px 0 0 18px;
+    color: var(--text);
+}
+
+/* CTA and utilities */
+body#achievements .cta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+body#achievements .muted {
+    color: var(--muted);
+}
+
+/* Footer spacing */
+body#achievements .site-footer {
+    margin-top: 36px;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#achievements #achieve-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#achievements .achieve-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    body#achievements .achieve-card {
+        flex-direction: column;
+    }
+
+        body#achievements .achieve-card .thumb {
+            width: 100%;
+            height: 140px;
+        }
+
+    body#achievements .hero-title {
+        font-size: 28px;
+    }
+}
