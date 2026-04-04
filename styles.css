@@ -3813,7 +3813,7 @@ body#platform-xbox {
     }
 }
 
-/* PlayStation News page styles */
+/* PlayStation page styles */
 body#platform-playstation {
     --page-max: 1100px;
     --gutter: 20px;
@@ -4006,5 +4006,407 @@ body#platform-playstation {
         width: 84px;
         height: 56px;
         flex: 0 0 84px;
+    }
+}
+
+/* Nintendo page styles */
+body#platform-nintendo {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #e60012;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#platform-nintendo .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#platform-nintendo #ns-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(230,0,18,0.03), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#platform-nintendo .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#platform-nintendo .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#platform-nintendo .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#platform-nintendo .hero-content a:hover,
+        body#platform-nintendo .hero-content a:focus {
+            text-decoration: underline;
+            color: #b3000f;
+        }
+
+    /* Generic card grid used across sections */
+    body#platform-nintendo .card-grid {
+        display: grid;
+        gap: var(--gutter);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body#platform-nintendo .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+        body#platform-nintendo .card h3 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 18px;
+        }
+
+        body#platform-nintendo .card p {
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        body#platform-nintendo .card .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Inline thumbnail and content layout for news items */
+        body#platform-nintendo .card[style*="grid-template-columns"] {
+            gap: 12px;
+            align-items: start;
+        }
+
+        body#platform-nintendo .card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    /* First-party and spotlight cards */
+    body#platform-nintendo #first-party .card {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Related product tiles and platform links */
+    body#platform-nintendo .product-tile {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    body#platform-nintendo .product-link {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    body#platform-nintendo .product-thumb {
+        width: 96px;
+        height: 64px;
+        flex: 0 0 96px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #111827;
+    }
+
+        body#platform-nintendo .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+        }
+
+    /* Focus */
+    body#platform-nintendo a:focus,
+    body#platform-nintendo button:focus,
+    body#platform-nintendo input:focus,
+    body#platform-nintendo textarea:focus {
+        box-shadow: 0 0 0 3px rgba(230,0,18,0.12);
+        border-color: rgba(230,0,18,0.25);
+        outline: none;
+    }
+
+    body#platform-nintendo .product-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(230,0,18,0.12);
+        border-radius: 8px;
+    }
+
+    /* Small utilities */
+    body#platform-nintendo .muted {
+        color: var(--muted);
+    }
+
+    body#platform-nintendo .section-title {
+        font-size: 20px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    /* Footer spacing */
+    body#platform-nintendo .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#platform-nintendo #ns-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#platform-nintendo .card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    body#platform-nintendo .hero-title {
+        font-size: 28px;
+    }
+
+    body#platform-nintendo .product-thumb {
+        width: 84px;
+        height: 56px;
+        flex: 0 0 84px;
+    }
+}
+
+/* Mobile News page styles */
+body#platform-mobile {
+    --page-max: 1100px;
+    --gutter: 20px;
+    --card-radius: 12px;
+    --accent: #0a84ff;
+    --muted: #6b7280;
+    --card-bg: #ffffff;
+    --text: #0b1220;
+}
+
+    /* Page container */
+    body#platform-mobile .site > main {
+        max-width: var(--page-max);
+        margin: 0 auto;
+        padding: 28px 20px;
+        box-sizing: border-box;
+    }
+
+    /* Hero */
+    body#platform-mobile #mobile-hero {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: var(--gutter);
+        align-items: center;
+        padding: 22px;
+        border-radius: var(--card-radius);
+        background: linear-gradient(180deg, rgba(10,132,255,0.03), transparent);
+        box-shadow: 0 8px 30px rgba(11,17,32,0.04);
+        margin-bottom: 28px;
+    }
+
+    body#platform-mobile .hero-title {
+        font-size: 34px;
+        margin: 0;
+        color: var(--text);
+    }
+
+    body#platform-mobile .hero-sub {
+        color: var(--muted);
+        margin-top: 8px;
+    }
+
+    body#platform-mobile .hero-content a {
+        color: var(--accent);
+        text-decoration: none;
+    }
+
+        body#platform-mobile .hero-content a:hover,
+        body#platform-mobile .hero-content a:focus {
+            text-decoration: underline;
+            color: #0666d6;
+        }
+
+    /* Card grid for news items */
+    body#platform-mobile .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--gutter);
+    }
+
+    body#platform-mobile .card {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 14px;
+        box-sizing: border-box;
+    }
+
+        body#platform-mobile .card h3 {
+            margin: 0 0 8px;
+            color: var(--text);
+            font-size: 18px;
+        }
+
+        body#platform-mobile .card p {
+            margin: 0 0 8px;
+            color: var(--text);
+        }
+
+        body#platform-mobile .card .muted {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Inline thumbnail and content layout for list items */
+        body#platform-mobile .card[style*="grid-template-columns"] {
+            gap: 12px;
+            align-items: start;
+        }
+
+        body#platform-mobile .card img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+    /* App store and distribution cards */
+    body#platform-mobile #stores .card {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    /* Product tiles and links */
+    body#platform-mobile .product-tile {
+        background: var(--card-bg);
+        border-radius: 10px;
+        border: 1px solid rgba(11,17,32,0.04);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    body#platform-mobile .product-link {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    body#platform-mobile .product-thumb {
+        width: 96px;
+        height: 64px;
+        flex: 0 0 96px;
+        overflow: hidden;
+        border-radius: 6px;
+        background: #111827;
+    }
+
+        body#platform-mobile .product-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 6px;
+        }
+
+    /* Focus */
+    body#platform-mobile a:focus,
+    body#platform-mobile button:focus,
+    body#platform-mobile input:focus,
+    body#platform-mobile textarea:focus {
+        box-shadow: 0 0 0 3px rgba(10,132,255,0.12);
+        border-color: rgba(10,132,255,0.25);
+        outline: none;
+    }
+
+    body#platform-mobile .product-link:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(10,132,255,0.12);
+        border-radius: 8px;
+    }
+
+    /* Small utilities */
+    body#platform-mobile .muted {
+        color: var(--muted);
+    }
+
+    body#platform-mobile .section-title {
+        font-size: 20px;
+        margin: 0 0 8px;
+        color: var(--text);
+    }
+
+    /* Footer spacing */
+    body#platform-mobile .site-footer {
+        margin-top: 36px;
+    }
+
+/* Responsive */
+@media (max-width: 980px) {
+    body#platform-mobile #mobile-hero {
+        grid-template-columns: 1fr;
+        padding: 18px;
+    }
+
+    body#platform-mobile .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#platform-mobile .product-thumb {
+        width: 84px;
+        height: 56px;
+        flex: 0 0 84px;
+    }
+}
+
+@media (max-width: 560px) {
+    body#platform-mobile .hero-title {
+        font-size: 28px;
+    }
+
+    body#platform-mobile .product-thumb {
+        width: 72px;
+        height: 48px;
+        flex: 0 0 72px;
+    }
+
+    body#platform-mobile .card {
+        padding: 12px;
     }
 }
