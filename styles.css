@@ -12,7 +12,6 @@ body#home {
     --text: #0b1220;
 }
 
-/* Global resets */
 * {
     box-sizing: border-box;
 }
