@@ -1,5 +1,4 @@
-﻿// discussions.js
-(function () {
+﻿(function () {
     const STORAGE_KEY = 'yag_discussion_posts_v1';
     const MAX_POSTS = 500;
     const MAX_NAME = 60;
