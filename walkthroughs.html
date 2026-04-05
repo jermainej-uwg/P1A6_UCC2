@@ -31,8 +31,7 @@
                     <h1 id="walk-title" class="hero-title">Walkthroughs</h1>
                     <p class="hero-sub">A collection of walkthroughs, hidden content writeups, and practical guides to help you through every stage of the game.</p>
                     <p style="margin-top:12px;">
-                        Quick links:
-                        <a href="easter-eggs.html">Easter Eggs</a> ·
+                        <a href="easter eggs.html">Easter Eggs</a> ·
                         <a href="guides.html">Guides</a>
                     </p>
                 </div>
@@ -87,10 +86,10 @@
             <section id="categories" class="walk-section" aria-labelledby="categories-heading" style="margin-top:20px;">
                 <h2 id="categories-heading" class="section-title">Categories</h2>
                 <ul>
-                    <li><a href="gameplay-walkthroughs.html">Gameplay Walkthroughs</a></li>
-                    <li><a href="achievement-guides.html">Achievement Guides</a></li>
-                    <li><a href="easter-eggs.html">Easter Eggs and Hidden Content</a></li>
-                    <li><a href="game-lore.html">Game Lore</a></li>
+                    <li><a href="gameplay walkthroughs.html">Gameplay Walkthroughs</a></li>
+                    <li><a href="achievements.html">Achievement Guides</a></li>
+                    <li><a href="easter eggs.html">Easter Eggs and Hidden Content</a></li>
+                    <li><a href="game lore.html">Game Lore</a></li>
                 </ul>
             </section>
 
@@ -108,14 +107,6 @@
                         <p class="muted">Overview of collectible locations with brief coordinates and recommended order for efficient completion.</p>
                     </article>
                 </div>
-            </section>
-
-            <section id="links" class="walk-section" aria-labelledby="links-heading" style="margin-top:20px;">
-                <h2 id="links-heading" class="section-title">Direct links</h2>
-                <ul>
-                    <li><a href="easter-eggs.html">Easter Eggs and Hidden Content</a></li>
-                    <li><a href="guides.html">Guides</a></li>
-                </ul>
             </section>
         </main>
 
@@ -149,16 +140,6 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        (function () {
-            const links = document.querySelectorAll('.main-nav .nav-link');
-            const current = location.pathname.split('/').pop() || 'index.html';
-            links.forEach(a => {
-                const href = a.getAttribute('href');
-                if (!href) return;
-                if (href === current) a.classList.add('active');
-            });
-        })();
     </script>
 </body>
 </html>
