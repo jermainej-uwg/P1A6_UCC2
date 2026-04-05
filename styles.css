@@ -1,6 +1,4 @@
-﻿/* Styles Sheet */
-
-/* Index page styles */
+﻿/* Index page styles */
 body#home {
     --bg: #ffffff;
     --card: #f7f7f9;
@@ -14,7 +12,7 @@ body#home {
     --text: #0b1220;
 }
 
-/* Site text elements */
+/* Global resets */
 * {
     box-sizing: border-box;
 }
@@ -23,7 +21,7 @@ html, body {
     height: 100%;
     margin: 0;
     font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: var(--text, #0b1220);
+    color: var(--text);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -33,32 +31,6 @@ html, body {
         color: var(--text);
     }
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--text, #0b1220);
-    margin: 0 0 12px;
-    font-weight: 700;
-}
-
-p {
-    color: var(--text, #0b1220);
-    line-height: 1.65;
-    margin: 0 0 16px;
-    font-size: 16px;
-}
-
-a {
-    color: var(--accent, #ff6b6b);
-    text-decoration: none;
-}
-
-/* Layout container */
-.site {
-    max-width: var(--max-width);
-    margin: 32px auto;
-    padding: 0 16px;
-}
-
-/* Header */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -82,10 +54,13 @@ a {
     color: var(--muted);
 }
 
-/* Navigation */
+
 .main-nav {
     display: flex;
     gap: 18px;
+    flex: 1 1 auto;
+    justify-content: flex-end;
+    align-items: center;
 }
 
 .nav-link {
@@ -101,11 +76,10 @@ a {
         background: var(--glass);
     }
 
-/* Hero */
 .hero {
     display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 20px;
+    grid-template-columns: 1fr 420px;
+    gap: var(--gap);
     background: linear-gradient(180deg, rgba(11,17,32,0.02), transparent);
     padding: 28px;
     border-radius: var(--radius);
@@ -115,7 +89,7 @@ a {
 }
 
 .hero-title {
-    font-size: 44px;
+    font-size: 40px;
     margin: 0;
     color: var(--text);
 }
@@ -123,7 +97,7 @@ a {
 .hero-sub {
     color: var(--muted);
     margin: 10px 0 18px;
-    max-width: 60%;
+    max-width: 100%;
 }
 
 .hero-actions {
@@ -139,14 +113,16 @@ a {
     box-shadow: 0 6px 18px rgba(11,17,32,0.04);
 }
 
-/* Sections */
 .section-title {
     margin: 0 0 12px;
     font-size: 20px;
     color: var(--text);
 }
 
-/* Walkthroughs page styles */
+body#home section {
+    margin-bottom: 28px;
+}
+
 .walk-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -155,7 +131,7 @@ a {
 
 .walk-card {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: flex-start;
     background: var(--card);
     padding: 16px;
@@ -164,8 +140,8 @@ a {
 }
 
     .walk-card .thumb img {
-        width: 120px;
-        height: 80px;
+        width: 320px;
+        height: 180px;
         object-fit: cover;
         border-radius: 8px;
     }
@@ -179,6 +155,58 @@ a {
     margin: 0;
     color: var(--muted);
     font-size: 14px;
+}
+
+@media (max-width: 980px) {
+
+    body#home .hero {
+        grid-template-columns: 1fr;
+        padding: 22px;
+        gap: 20px;
+    }
+
+    body#home .hero-media img {
+        height: 200px;
+    }
+
+    body#home .walk-grid {
+        grid-template-columns: 1fr;
+    }
+
+    body#home .walk-card {
+        padding: 16px;
+        gap: 14px;
+    }
+
+        body#home .walk-card .thumb img {
+            width: 100%;
+            height: 180px;
+        }
+}
+
+@media (max-width: 560px) {
+
+    body#home .hero-title {
+        font-size: 32px;
+    }
+
+    body#home .hero-media img {
+        height: 180px;
+    }
+
+    body#home .walk-card .thumb img {
+        width: 100%;
+        height: 160px;
+    }
+
+    body#home .site {
+        padding: 20px 16px;
+    }
+
+    body#home .walk-card {
+        padding: 14px;
+        gap: 12px;
+    }
 }
 
 /* Reviews page styles */
@@ -212,7 +240,6 @@ a {
     gap: 10px;
 }
 
-/* Latest games */
 .latest-list {
     display: flex;
     gap: 16px;
@@ -244,7 +271,6 @@ a {
     color: var(--muted);
 }
 
-/* CTA strip */
 .cta {
     display: flex;
     justify-content: space-between;
@@ -257,7 +283,6 @@ a {
     border: 1px solid rgba(11,17,32,0.03);
 }
 
-/* Footer */
 .site-footer {
     display: flex;
     justify-content: space-between;
@@ -286,12 +311,10 @@ a {
     margin-bottom: 6px;
 }
 
-/* Utility */
 .hidden {
     display: none !important;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     .hero {
         grid-template-columns: 1fr;
@@ -339,7 +362,6 @@ body#discussion {
     --gutter: 20px;
 }
 
-/* Article layout */
 .post {
     display: grid;
     grid-template-columns: 1fr var(--aside-width);
@@ -349,7 +371,6 @@ body#discussion {
     max-width: calc(var(--content-max) + var(--aside-width) + var(--gutter));
 }
 
-    /* Main content column */
     .post > .post-header,
     .post > .post-body {
         grid-column: 1 / 2;
@@ -357,7 +378,6 @@ body#discussion {
         width: 100%;
     }
 
-/* Post header */
 .post-header .post-sub {
     margin: 6px 0 18px;
     color: var(--muted);
@@ -365,7 +385,6 @@ body#discussion {
     letter-spacing: 0.2px;
 }
 
-/* Hero image */
 .post-hero {
     margin: 0 0 18px;
 }
@@ -379,7 +398,6 @@ body#discussion {
         box-shadow: 0 8px 24px rgba(11,17,32,0.04);
     }
 
-/* Body text */
 .post-body p {
     margin: 0 0 16px;
     line-height: 1.65;
@@ -387,7 +405,7 @@ body#discussion {
     font-size: 16px;
 }
 
-/* Small inline images inside article */
+
 .post-images {
     display: flex;
     gap: 14px;
@@ -417,7 +435,6 @@ body#discussion {
         color: var(--muted);
     }
 
-/* Related articles */
 .related {
     grid-column: 2 / 3;
     width: 100%;
@@ -462,12 +479,10 @@ body#discussion {
     color: var(--muted);
 }
 
-/* footer spacing adjustments for discussion page */
 .site-footer {
     margin-top: 28px;
 }
 
-/* Responsive: stack columns on smaller screens */
 @media (max-width: 980px) {
     .post {
         grid-template-columns: 1fr;
@@ -510,7 +525,6 @@ body#discussion {
     }
 }
 
-
 /* Multimedia page styles */
 body#multimedia {
     --media-max: 1100px;
@@ -518,7 +532,6 @@ body#multimedia {
     --gutter: 20px;
 }
 
-/* Hero changes */
 #multimedia-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -541,7 +554,6 @@ body#multimedia .hero-sub {
     margin: 10px 0 18px;
 }
 
-/* Featured grid */
 #featured .walk-grid {
     grid-template-columns: 1fr 1fr;
     gap: var(--gutter);
@@ -564,7 +576,6 @@ body#multimedia .walk-card {
         border-radius: 8px;
     }
 
-/* Reviews and media section */
 body#multimedia .reviews-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -584,7 +595,6 @@ body#multimedia .review-card {
     gap: 8px;
 }
 
-/* Latest hardware list */
 body#multimedia .latest-list {
     display: flex;
     gap: 16px;
@@ -601,7 +611,6 @@ body#multimedia .game-card {
     border: 1px solid rgba(11,17,32,0.04);
 }
 
-/* Embedded media thumbnails */
 body#multimedia .media-thumb {
     width: 100%;
     height: 160px;
@@ -614,8 +623,6 @@ body#multimedia .media-thumb {
     margin-bottom: 12px;
 }
 
-
-/* Responsive */
 @media (max-width: 980px) {
     #multimedia-hero {
         grid-template-columns: 1fr;
@@ -667,7 +674,6 @@ body#news {
     --gutter: 20px;
 }
 
-/* Hero and lead story */
 #news-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -691,7 +697,6 @@ body#news .hero-sub {
     margin: 10px 0 18px;
 }
 
-/* Lead content column */
 #news-hero .lead {
     max-width: 720px;
 }
@@ -703,7 +708,6 @@ body#news .hero-sub {
         font-size: 16px;
     }
 
-/* Related products grid */
 .related-products {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(var(--tile-min), 1fr));
@@ -746,7 +750,6 @@ body#news .hero-sub {
     font-size: 13px;
 }
 
-/* News list and cards */
 .news-list {
     display: grid;
     grid-template-columns: 1fr;
@@ -772,7 +775,6 @@ body#news .hero-sub {
         font-size: 14px;
     }
 
-/* Social icons block (footer area) */
 .news-social {
     display: flex;
     gap: 12px;
@@ -791,7 +793,6 @@ body#news .hero-sub {
         color: var(--text);
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     #news-hero {
         grid-template-columns: 1fr;
@@ -832,14 +833,6 @@ body#walkthroughs {
     --card-radius: 12px;
 }
 
-    /* Page container */
-    body#walkthroughs .site > main {
-        max-width: var(--walk-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #walkthroughs-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -863,7 +856,6 @@ body#walkthroughs .hero-sub {
     margin-top: 8px;
 }
 
-/* Walk grid and cards */
 .walk-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -911,7 +903,6 @@ body#walkthroughs .walk-card {
     font-size: 14px;
 }
 
-/* News list */
 .news-list {
     display: grid;
     gap: 12px;
@@ -930,7 +921,6 @@ body#walkthroughs .walk-card {
         color: var(--text);
     }
 
-/* Categories and links */
 #categories ul {
     list-style: none;
     padding: 0;
@@ -946,17 +936,15 @@ body#walkthroughs .walk-card {
     border-radius: 8px;
 }
 
-/* Footer spacing specific to this page */
+
 body#walkthroughs .site-footer {
     margin-top: 36px;
 }
 
-/* Utility */
 body#walkthroughs .muted {
     color: var(--muted);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     #walkthroughs-hero {
         grid-template-columns: 1fr;
@@ -995,14 +983,6 @@ body#easter-eggs {
     --thumb-w: 240px;
 }
 
-    /* Page container */
-    body#easter-eggs .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #easter-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1026,14 +1006,12 @@ body#easter-eggs .hero-sub {
     margin-top: 8px;
 }
 
-/* Card grid */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--gutter);
 }
 
-/* Card */
 .card {
     display: flex;
     gap: 14px;
@@ -1075,7 +1053,6 @@ body#easter-eggs .hero-sub {
     line-height: 1.5;
 }
 
-/* Secret quest card variant */
 #secret-quests .card {
     align-items: flex-start;
 }
@@ -1085,7 +1062,6 @@ body#easter-eggs .hero-sub {
     color: var(--text);
 }
 
-/* Lore links and small cards */
 #lore-links .card {
     padding: 12px;
     display: block;
@@ -1096,22 +1072,18 @@ body#easter-eggs .hero-sub {
     text-decoration: underline;
 }
 
-/* Contribute section spacing */
 #contribute {
     margin-top: 18px;
 }
 
-/* Footer spacing */
 body#easter-eggs .site-footer {
     margin-top: 36px;
 }
 
-/* Utility */
 body#easter-eggs .muted {
     color: var(--muted);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     #easter-hero {
         grid-template-columns: 1fr;
@@ -1150,14 +1122,6 @@ body#game-lore {
     --thumb-w: 240px;
 }
 
-    /* Page container */
-    body#game-lore .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #lore-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1181,7 +1145,6 @@ body#game-lore .hero-sub {
     margin-top: 8px;
 }
 
-/* Card grid and cards */
 body#game-lore .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1207,13 +1170,11 @@ body#game-lore .content-section .card {
         line-height: 1.5;
     }
 
-/* Special layout for timeline / long content */
 body#game-lore #overview .card,
 body#game-lore #npc-dialogue .card {
     display: block;
 }
 
-    /* Lists and transcripts */
     body#game-lore #npc-dialogue .card ul,
     body#game-lore #npc-dialogue .card ol {
         margin: 10px 0 0 18px;
@@ -1221,7 +1182,6 @@ body#game-lore #npc-dialogue .card {
         line-height: 1.45;
     }
 
-/* Theories grid (compact cards) */
 body#game-lore #theories .card {
     padding: 12px;
 }
@@ -1230,7 +1190,6 @@ body#game-lore #theories .card {
         font-size: 16px;
     }
 
-/* Related links */
 body#game-lore #related ul {
     list-style: none;
     padding: 0;
@@ -1246,17 +1205,14 @@ body#game-lore #related li {
     border-radius: 8px;
 }
 
-/* Footer spacing */
 body#game-lore .site-footer {
     margin-top: 36px;
 }
 
-/* Utility */
 body#game-lore .muted {
     color: var(--muted);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#game-lore #lore-hero {
         grid-template-columns: 1fr;
@@ -1286,14 +1242,6 @@ body#guides {
     --thumb-w: 240px;
 }
 
-    /* Page container */
-    body#guides .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #guides-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1317,7 +1265,6 @@ body#guides .hero-sub {
     margin-top: 8px;
 }
 
-/* Card grid and guide cards */
 body#guides .card-grid,
 body#guides .walk-grid {
     display: grid;
@@ -1325,7 +1272,6 @@ body#guides .walk-grid {
     gap: var(--gutter);
 }
 
-/* Generic card */
 body#guides .card,
 body#guides .news-card,
 body#guides .walk-card {
@@ -1335,7 +1281,6 @@ body#guides .walk-card {
     border: 1px solid rgba(11,17,32,0.04);
 }
 
-/* Walk card layout */
 body#guides .walk-card {
     display: flex;
     gap: 14px;
@@ -1373,7 +1318,6 @@ body#guides .walk-meta p {
     font-size: 14px;
 }
 
-/* News and guide list */
 body#guides .news-list {
     display: grid;
     gap: 12px;
@@ -1385,13 +1329,11 @@ body#guides .news-card h3 {
     color: var(--text);
 }
 
-/* Builds and tools sections */
 body#guides .walk-grid .walk-card,
 body#guides .card-grid .card {
     align-items: flex-start;
 }
 
-/* CTA and small utilities */
 body#guides .cta {
     display: flex;
     justify-content: space-between;
@@ -1404,17 +1346,14 @@ body#guides .cta {
         margin: 0;
     }
 
-/* Footer spacing */
 body#guides .site-footer {
     margin-top: 36px;
 }
 
-/* Utility */
 body#guides .muted {
     color: var(--muted);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#guides #guides-hero {
         grid-template-columns: 1fr;
@@ -1454,14 +1393,6 @@ body#gameplay-walkthroughs {
     --thumb-w: 240px;
 }
 
-    /* Page container */
-    body#gameplay-walkthroughs .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #gw-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1485,7 +1416,6 @@ body#gameplay-walkthroughs .hero-sub {
     margin-top: 8px;
 }
 
-/* Walk grid and cards */
 body#gameplay-walkthroughs .walk-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1533,7 +1463,6 @@ body#gameplay-walkthroughs .walk-meta p {
     font-size: 14px;
 }
 
-/* Boss strategies and achievement cards */
 body#gameplay-walkthroughs .news-card,
 body#gameplay-walkthroughs .news-list article {
     background: var(--card);
@@ -1547,7 +1476,6 @@ body#gameplay-walkthroughs .news-list article {
         color: var(--text);
     }
 
-/* Lists and checklists */
 body#gameplay-walkthroughs ol,
 body#gameplay-walkthroughs ul {
     margin: 10px 0 0 18px;
@@ -1555,7 +1483,6 @@ body#gameplay-walkthroughs ul {
     line-height: 1.45;
 }
 
-/* CTA and small utilities */
 body#gameplay-walkthroughs .cta {
     display: flex;
     gap: 12px;
@@ -1567,12 +1494,10 @@ body#gameplay-walkthroughs .muted {
     color: var(--muted);
 }
 
-/* Footer spacing */
 body#gameplay-walkthroughs .site-footer {
     margin-top: 36px;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#gameplay-walkthroughs #gw-hero {
         grid-template-columns: 1fr;
@@ -1611,14 +1536,6 @@ body#achievements {
     --thumb-w: 320px;
 }
 
-    /* Page container */
-    body#achievements .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #achieve-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1642,7 +1559,6 @@ body#achievements .hero-sub {
     margin-top: 8px;
 }
 
-/* Filters toolbar */
 body#achievements .filters {
     display: flex;
     gap: 10px;
@@ -1665,7 +1581,6 @@ body#achievements .filters {
             border-color: rgba(11,17,32,0.06);
         }
 
-/* Achievement grid and cards */
 body#achievements .achieve-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1714,7 +1629,6 @@ body#achievements .achieve-meta p {
     font-size: 14px;
 }
 
-/* Checklist and step-by-step guides */
 body#achievements .checklist {
     background: var(--card);
     padding: 14px;
@@ -1730,14 +1644,12 @@ body#achievements .checklist {
         color: var(--text);
     }
 
-/* Lists and checklists inside cards */
 body#achievements .achieve-card ol,
 body#achievements .achieve-card ul {
     margin: 8px 0 0 18px;
     color: var(--text);
 }
 
-/* CTA and utilities */
 body#achievements .cta {
     display: flex;
     gap: 12px;
@@ -1749,12 +1661,10 @@ body#achievements .muted {
     color: var(--muted);
 }
 
-/* Footer spacing */
 body#achievements .site-footer {
     margin-top: 36px;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#achievements #achieve-hero {
         grid-template-columns: 1fr;
@@ -1789,14 +1699,6 @@ body#reviews {
     --thumb-w: 240px;
 }
 
-    /* Page container */
-    body#reviews .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #reviews-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1820,7 +1722,6 @@ body#reviews .hero-sub {
     margin-top: 8px;
 }
 
-/* Quick links in hero */
 body#reviews .hero-content p a {
     text-decoration: none;
 }
@@ -1829,7 +1730,6 @@ body#reviews .hero-content p a {
         text-decoration: underline;
     }
 
-/* Card grid and generic cards */
 body#reviews .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1858,7 +1758,6 @@ body#reviews .news-card {
         line-height: 1.5;
     }
 
-/* Featured game reviews */
 body#reviews #featured-reviews .card-thumb,
 body#reviews #featured-hardware .card-thumb {
     width: var(--thumb-w);
@@ -1877,7 +1776,6 @@ body#reviews .card-thumb img {
     display: block;
 }
 
-/* Hardware and game sections share layout */
 body#reviews #featured-hardware .card,
 body#reviews #featured-reviews .card {
     display: flex;
@@ -1889,17 +1787,14 @@ body#reviews .card .card-body {
     flex: 1;
 }
 
-/* Archive list */
 body#reviews #review-archive .card-grid {
     margin-top: 12px;
 }
 
-/* Scoring rubric card */
 body#reviews #scoring-rubric .card {
     margin-top: 12px;
 }
 
-/* Lists and inline lists */
 body#reviews ol,
 body#reviews ul {
     margin: 10px 0 0 18px;
@@ -1907,7 +1802,6 @@ body#reviews ul {
     line-height: 1.45;
 }
 
-/* CTA and utilities */
 body#reviews .cta {
     display: flex;
     gap: 12px;
@@ -1919,12 +1813,10 @@ body#reviews .muted {
     color: var(--muted);
 }
 
-/* Footer spacing */
 body#reviews .site-footer {
     margin-top: 36px;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#reviews #reviews-hero {
         grid-template-columns: 1fr;
@@ -1965,14 +1857,6 @@ body#game-reviews {
     --thumb-w: 240px;
 }
 
-    /* Page container */
-    body#game-reviews .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #gr-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -1996,7 +1880,6 @@ body#game-reviews .hero-sub {
     margin-top: 8px;
 }
 
-/* Quick links in hero */
 body#game-reviews .hero-content p a {
     text-decoration: none;
 }
@@ -2005,7 +1888,6 @@ body#game-reviews .hero-content p a {
         text-decoration: underline;
     }
 
-/* Card grid and generic cards */
 body#game-reviews .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2034,7 +1916,6 @@ body#game-reviews .news-card {
         line-height: 1.5;
     }
 
-/* Featured game cards */
 body#game-reviews #featured-games .card {
     display: flex;
     gap: 14px;
@@ -2062,13 +1943,11 @@ body#game-reviews .card .card-body {
     flex: 1;
 }
 
-/* Deep dive and archive cards */
 body#game-reviews #deep-dives .card,
 body#game-reviews #archive .card {
     margin-top: 12px;
 }
 
-/* Lists and inline notes */
 body#game-reviews ol,
 body#game-reviews ul {
     margin: 10px 0 0 18px;
@@ -2076,7 +1955,6 @@ body#game-reviews ul {
     line-height: 1.45;
 }
 
-/* Utilities */
 body#game-reviews .muted {
     color: var(--muted);
 }
@@ -2088,12 +1966,10 @@ body#game-reviews .cta {
     margin-top: 18px;
 }
 
-/* Footer spacing */
 body#game-reviews .site-footer {
     margin-top: 36px;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#game-reviews #gr-hero {
         grid-template-columns: 1fr;
@@ -2133,14 +2009,6 @@ body#hardware-reviews {
     --accent: #c62828;
 }
 
-    /* Page container */
-    body#hardware-reviews .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #hw-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -2164,7 +2032,6 @@ body#hardware-reviews .hero-sub {
     margin-top: 8px;
 }
 
-/* Hero quick links */
 body#hardware-reviews .hero-content p a {
     color: var(--accent);
     text-decoration: none;
@@ -2176,7 +2043,6 @@ body#hardware-reviews .hero-content p a {
         text-decoration: underline;
     }
 
-/* Card grid and generic cards */
 body#hardware-reviews .card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -2205,7 +2071,6 @@ body#hardware-reviews .news-card {
         line-height: 1.5;
     }
 
-/* Featured hardware cards */
 body#hardware-reviews #featured-hardware .card {
     display: flex;
     gap: 14px;
@@ -2233,13 +2098,11 @@ body#hardware-reviews .card .card-body {
     flex: 1;
 }
 
-/* Testing methods and archive cards */
 body#hardware-reviews #testing-methods .card,
 body#hardware-reviews #hardware-archive .card {
     margin-top: 12px;
 }
 
-/* Lists and inline notes */
 body#hardware-reviews ol,
 body#hardware-reviews ul {
     margin: 10px 0 0 18px;
@@ -2247,7 +2110,6 @@ body#hardware-reviews ul {
     line-height: 1.45;
 }
 
-/* Utilities */
 body#hardware-reviews .muted {
     color: var(--muted);
 }
@@ -2259,12 +2121,10 @@ body#hardware-reviews .cta {
     margin-top: 18px;
 }
 
-/* Footer spacing */
 body#hardware-reviews .site-footer {
     margin-top: 36px;
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#hardware-reviews #hw-hero {
         grid-template-columns: 1fr;
@@ -2295,7 +2155,7 @@ body#hardware-reviews .site-footer {
     }
 }
 
-/* Discussions page styles */
+/* Discussions post page styles */
 body#discussions {
     --page-max: 1100px;
     --gutter: 20px;
@@ -2306,14 +2166,6 @@ body#discussions {
     --text-color: #0b1220;
 }
 
-    /* Page container */
-    body#discussions .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-/* Hero */
 #discuss-hero {
     display: grid;
     grid-template-columns: 1fr 420px;
@@ -2348,7 +2200,6 @@ body#discussions .hero-content p a {
         color: #b71c1c;
     }
 
-/* Post form */
 body#discussions .post-form {
     background: var(--bg-card);
     padding: 16px;
@@ -2380,13 +2231,11 @@ body#discussions .post-form {
         min-height: 120px;
     }
 
-/* Inline helper text */
 body#discussions .muted {
     color: var(--muted-color);
     font-size: 13px;
 }
 
-/* Posts list and cards */
 #posts-list {
     max-width: 920px;
 }
@@ -2416,17 +2265,14 @@ body#discussions .muted {
             color: var(--muted-color);
         }
 
-    /* Empty state */
     #posts-list .muted.empty {
         padding: 12px 0;
     }
 
-/* Small utilities */
 body#discussions .site-footer {
     margin-top: 36px;
 }
 
-/* Focusable interactive elements */
 body#discussions a:focus,
 body#discussions button:focus,
 body#discussions input:focus,
@@ -2435,7 +2281,6 @@ body#discussions textarea:focus {
     border-color: rgba(198,40,40,0.35);
 }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#discussions #discuss-hero {
         grid-template-columns: 1fr;
@@ -2464,14 +2309,6 @@ body#pictures {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#pictures .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-    /* Hero */
     body#pictures #pictures-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -2506,7 +2343,6 @@ body#pictures {
             color: #b71c1c;
         }
 
-    /* Generic card grid */
     body#pictures .card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -2523,7 +2359,7 @@ body#pictures {
     }
 
         body#pictures figure.card img {
-            width: 100%;
+            width: 60%;
             height: auto;
             display: block;
             border-radius: 8px;
@@ -2535,7 +2371,6 @@ body#pictures {
             font-size: 13px;
         }
 
-    /* GIFs grid */
     body#pictures #gifs .card-grid,
     body#pictures .gifs-grid {
         display: grid;
@@ -2569,7 +2404,6 @@ body#pictures {
             display: block;
         }
 
-    /* Lightbox-ready classes */
     body#pictures .lightbox-backdrop {
         position: fixed;
         inset: 0;
@@ -2599,7 +2433,6 @@ body#pictures {
             display: block;
         }
 
-    /* Utilities */
     body#pictures .muted {
         color: var(--muted);
     }
@@ -2610,7 +2443,6 @@ body#pictures {
         color: var(--text);
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#pictures #pictures-hero {
         grid-template-columns: 1fr;
@@ -2651,14 +2483,6 @@ body#game-trailers {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#game-trailers .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-    /* Hero */
     body#game-trailers #gt-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -2693,7 +2517,6 @@ body#game-trailers {
             color: #b71c1c;
         }
 
-    /* Generic card grid */
     body#game-trailers .card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -2719,7 +2542,6 @@ body#game-trailers {
             font-size: 13px;
         }
 
-    /* Video wrapper responsive */
     body#game-trailers .video-wrap {
         position: relative;
         width: 100%;
@@ -2751,7 +2573,6 @@ body#game-trailers {
             outline-offset: 3px;
         }
 
-    /* Light focus styles for accessibility */
     body#game-trailers a:focus,
     body#game-trailers button:focus,
     body#game-trailers input:focus,
@@ -2760,12 +2581,10 @@ body#game-trailers {
         border-color: rgba(198,40,40,0.35);
     }
 
-    /* Footer spacing */
     body#game-trailers .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive adjustments */
 @media (max-width: 980px) {
     body#game-trailers #gt-hero {
         grid-template-columns: 1fr;
@@ -2798,14 +2617,6 @@ body#gameplay-breakdown {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#gameplay-breakdown .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-    /* Hero */
     body#gameplay-breakdown #gb-hero {
         display: grid;
         grid-template-columns: 1fr 320px;
@@ -2840,26 +2651,42 @@ body#gameplay-breakdown {
             color: #b71c1c;
         }
 
-    /* Breakdowns list and game card */
     body#gameplay-breakdown .breakdowns {
         display: grid;
-        gap: 18px;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
     }
 
     body#gameplay-breakdown .game-card {
         display: grid;
         grid-template-columns: 320px 1fr;
-        gap: 16px;
+        gap: 24px;
         align-items: start;
         background: var(--bg-card);
-        border: 1px solid rgba(11,17,32,0.04);
+        border: 3px solid rgba(11,17,32,0.04);
         padding: 14px;
-        border-radius: 10px;
+        border-radius: 30px;
         box-sizing: border-box;
+        width: 700px;
     }
 
         body#gameplay-breakdown .game-card figure {
             margin: 0;
+            flex-shrink: 0;
+        }
+
+        body#gameplay-breakdown .game-card ul {
+            margin: 12px 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        body#gameplay-breakdown .game-card li {
+            margin-bottom: 8px;
+            line-height: 1.5;
         }
 
     body#gameplay-breakdown .thumb {
@@ -2881,7 +2708,12 @@ body#gameplay-breakdown {
             border-radius: 6px;
         }
 
-    /* Game meta */
+    body#gameplay-breakdown .game-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+
     body#gameplay-breakdown .game-meta h2 {
         margin: 0 0 8px;
         font-size: 20px;
@@ -2905,7 +2737,6 @@ body#gameplay-breakdown {
         color: var(--text);
     }
 
-    /* Small utilities and focus */
     body#gameplay-breakdown .muted {
         color: var(--muted);
     }
@@ -2925,7 +2756,6 @@ body#gameplay-breakdown {
         outline: none;
     }
 
-/* Responsive */
 @media (max-width: 900px) {
     body#gameplay-breakdown #gb-hero {
         grid-template-columns: 1fr;
@@ -2965,14 +2795,6 @@ body#creator-updates {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#creator-updates .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-    }
-
-    /* Hero */
     body#creator-updates #cu-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -3007,44 +2829,6 @@ body#creator-updates {
             color: #b71c1c;
         }
 
-    /* Subscribe CTA */
-    body#creator-updates .subscribe-form {
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        max-width: 720px;
-    }
-
-        body#creator-updates .subscribe-form input[type="email"] {
-            flex: 1;
-            padding: 10px 12px;
-            border-radius: 8px;
-            border: 1px solid rgba(11,17,32,0.06);
-            font-size: 15px;
-            color: var(--text);
-            background: #fff;
-        }
-
-        body#creator-updates .subscribe-form .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 14px;
-            border-radius: 8px;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-        }
-
-            body#creator-updates .subscribe-form .btn:focus {
-                outline: 3px solid rgba(198,40,40,0.18);
-                outline-offset: 3px;
-            }
-
-    /* Updates list and cards */
     body#creator-updates .card-grid {
         display: grid;
         gap: 14px;
@@ -3086,7 +2870,6 @@ body#creator-updates {
         font-size: 13px;
     }
 
-    /* Archive CTA */
     body#creator-updates .content-section .btn {
         display: inline-flex;
         padding: 10px 14px;
@@ -3097,12 +2880,10 @@ body#creator-updates {
         font-weight: 600;
     }
 
-    /* Footer spacing */
     body#creator-updates .site-footer {
         margin-top: 36px;
     }
 
-    /* Focus styles */
     body#creator-updates a:focus,
     body#creator-updates button:focus,
     body#creator-updates input:focus,
@@ -3112,7 +2893,6 @@ body#creator-updates {
         outline: none;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#creator-updates #cu-hero {
         grid-template-columns: 1fr;
@@ -3144,7 +2924,6 @@ body#creator-updates {
     }
 }
 
-/* Small utility */
 body#creator-updates .muted {
     color: var(--muted);
 }
@@ -3166,15 +2945,6 @@ body#game-releases {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#game-releases .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#game-releases #gr-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -3209,7 +2979,6 @@ body#game-releases {
             color: #b71c1c;
         }
 
-    /* Generic card grid used across sections */
     body#game-releases .card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -3240,7 +3009,6 @@ body#game-releases {
             font-size: 13px;
         }
 
-        /* Responsive video/image placeholders inside cards */
         body#game-releases .card figure {
             margin: 0;
         }
@@ -3252,7 +3020,6 @@ body#game-releases {
             border-radius: 8px;
         }
 
-    /* Platforms overview cards (compact) */
     body#game-releases #platforms .card {
         padding: 12px;
         display: flex;
@@ -3260,7 +3027,6 @@ body#game-releases {
         gap: 8px;
     }
 
-    /* Focus styles */
     body#game-releases a:focus,
     body#game-releases button:focus,
     body#game-releases input:focus,
@@ -3270,12 +3036,10 @@ body#game-releases {
         outline: none;
     }
 
-    /* Footer spacing */
     body#game-releases .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#game-releases #gr-hero {
         grid-template-columns: 1fr;
@@ -3318,15 +3082,6 @@ body#platforms {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#platforms .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#platforms #platforms-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -3361,7 +3116,6 @@ body#platforms {
             color: #b71c1c;
         }
 
-    /* Platform grid */
     body#platforms .card-grid {
         display: grid;
         gap: var(--gutter);
@@ -3379,7 +3133,6 @@ body#platforms {
         gap: 12px;
     }
 
-    /* Product link and thumb */
     body#platforms .product-link {
         display: flex;
         gap: 12px;
@@ -3418,7 +3171,6 @@ body#platforms {
         font-size: 13px;
     }
 
-    /* Focus and keyboard */
     body#platforms .product-link:focus {
         outline: none;
         box-shadow: 0 0 0 3px rgba(198,40,40,0.12);
@@ -3434,7 +3186,6 @@ body#platforms {
         outline: none;
     }
 
-    /* Small utilities */
     body#platforms .muted {
         color: var(--muted);
     }
@@ -3445,12 +3196,10 @@ body#platforms {
         color: var(--text);
     }
 
-    /* Footer spacing */
     body#platforms .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#platforms #platforms-hero {
         grid-template-columns: 1fr;
@@ -3485,15 +3234,6 @@ body#platform-pc {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#platform-pc .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#platform-pc #pc-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -3528,7 +3268,6 @@ body#platform-pc {
             color: #b71c1c;
         }
 
-    /* Card grid used for news and hardware sections */
     body#platform-pc .card-grid {
         display: grid;
         gap: var(--gutter);
@@ -3559,7 +3298,6 @@ body#platform-pc {
             font-size: 13px;
         }
 
-        /* Inline thumbnail and content layout for news items */
         body#platform-pc .card[style*="grid-template-columns"] {
             gap: 12px;
             align-items: start;
@@ -3572,7 +3310,6 @@ body#platform-pc {
             border-radius: 8px;
         }
 
-    /* Hardware notes grid */
     body#platform-pc #hardware .card {
         padding: 12px;
         display: flex;
@@ -3580,7 +3317,6 @@ body#platform-pc {
         gap: 8px;
     }
 
-    /* Focus */
     body#platform-pc a:focus,
     body#platform-pc button:focus,
     body#platform-pc input:focus,
@@ -3590,12 +3326,10 @@ body#platform-pc {
         outline: none;
     }
 
-    /* Footer spacing */
     body#platform-pc .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#platform-pc #pc-hero {
         grid-template-columns: 1fr;
@@ -3628,15 +3362,6 @@ body#platform-xbox {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#platform-xbox .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#platform-xbox #xbox-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -3671,7 +3396,6 @@ body#platform-xbox {
             color: #0b5f0b;
         }
 
-    /* Card grid for news items */
     body#platform-xbox .card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -3702,7 +3426,6 @@ body#platform-xbox {
             font-size: 13px;
         }
 
-        /* Inline thumbnail and content layout used in markup */
         body#platform-xbox .card[style*="grid-template-columns"] {
             gap: 12px;
             align-items: start;
@@ -3715,7 +3438,6 @@ body#platform-xbox {
             border-radius: 8px;
         }
 
-    /* Game Pass and notes grid */
     body#platform-xbox #gamepass .card {
         padding: 12px;
         display: flex;
@@ -3723,7 +3445,6 @@ body#platform-xbox {
         gap: 8px;
     }
 
-    /* Related product tiles */
     body#platform-xbox .product-tile {
         background: var(--card-bg);
         border-radius: 10px;
@@ -3757,7 +3478,6 @@ body#platform-xbox {
             border-radius: 6px;
         }
 
-    /* Focus */
     body#platform-xbox a:focus,
     body#platform-xbox button:focus,
     body#platform-xbox input:focus,
@@ -3773,7 +3493,6 @@ body#platform-xbox {
         border-radius: 8px;
     }
 
-    /* Small utilities */
     body#platform-xbox .muted {
         color: var(--muted);
     }
@@ -3784,12 +3503,10 @@ body#platform-xbox {
         color: var(--text);
     }
 
-    /* Footer spacing */
     body#platform-xbox .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#platform-xbox #xbox-hero {
         grid-template-columns: 1fr;
@@ -3824,15 +3541,6 @@ body#platform-playstation {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#platform-playstation .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#platform-playstation #ps-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -3867,7 +3575,6 @@ body#platform-playstation {
             color: #002f6f;
         }
 
-    /* Generic card grid used across sections */
     body#platform-playstation .card-grid {
         display: grid;
         gap: var(--gutter);
@@ -3898,7 +3605,6 @@ body#platform-playstation {
             font-size: 13px;
         }
 
-        /* Inline thumbnail and content layout for news items */
         body#platform-playstation .card[style*="grid-template-columns"] {
             gap: 12px;
             align-items: start;
@@ -3911,7 +3617,6 @@ body#platform-playstation {
             border-radius: 8px;
         }
 
-    /* Exclusives and spotlight cards */
     body#platform-playstation #exclusives .card {
         padding: 12px;
         display: flex;
@@ -3919,7 +3624,6 @@ body#platform-playstation {
         gap: 8px;
     }
 
-    /* Related product tiles */
     body#platform-playstation .product-tile {
         background: var(--card-bg);
         border-radius: 10px;
@@ -3953,7 +3657,6 @@ body#platform-playstation {
             border-radius: 6px;
         }
 
-    /* Focus */
     body#platform-playstation a:focus,
     body#platform-playstation button:focus,
     body#platform-playstation input:focus,
@@ -3969,7 +3672,6 @@ body#platform-playstation {
         border-radius: 8px;
     }
 
-    /* Small utilities */
     body#platform-playstation .muted {
         color: var(--muted);
     }
@@ -3980,12 +3682,10 @@ body#platform-playstation {
         color: var(--text);
     }
 
-    /* Footer spacing */
     body#platform-playstation .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#platform-playstation #ps-hero {
         grid-template-columns: 1fr;
@@ -4020,15 +3720,6 @@ body#platform-nintendo {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#platform-nintendo .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#platform-nintendo #ns-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -4063,7 +3754,6 @@ body#platform-nintendo {
             color: #b3000f;
         }
 
-    /* Generic card grid used across sections */
     body#platform-nintendo .card-grid {
         display: grid;
         gap: var(--gutter);
@@ -4094,7 +3784,6 @@ body#platform-nintendo {
             font-size: 13px;
         }
 
-        /* Inline thumbnail and content layout for news items */
         body#platform-nintendo .card[style*="grid-template-columns"] {
             gap: 12px;
             align-items: start;
@@ -4107,7 +3796,6 @@ body#platform-nintendo {
             border-radius: 8px;
         }
 
-    /* First-party and spotlight cards */
     body#platform-nintendo #first-party .card {
         padding: 12px;
         display: flex;
@@ -4115,7 +3803,6 @@ body#platform-nintendo {
         gap: 8px;
     }
 
-    /* Related product tiles and platform links */
     body#platform-nintendo .product-tile {
         background: var(--card-bg);
         border-radius: 10px;
@@ -4149,7 +3836,6 @@ body#platform-nintendo {
             border-radius: 6px;
         }
 
-    /* Focus */
     body#platform-nintendo a:focus,
     body#platform-nintendo button:focus,
     body#platform-nintendo input:focus,
@@ -4165,7 +3851,6 @@ body#platform-nintendo {
         border-radius: 8px;
     }
 
-    /* Small utilities */
     body#platform-nintendo .muted {
         color: var(--muted);
     }
@@ -4176,12 +3861,10 @@ body#platform-nintendo {
         color: var(--text);
     }
 
-    /* Footer spacing */
     body#platform-nintendo .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#platform-nintendo #ns-hero {
         grid-template-columns: 1fr;
@@ -4216,15 +3899,6 @@ body#platform-mobile {
     --text: #0b1220;
 }
 
-    /* Page container */
-    body#platform-mobile .site > main {
-        max-width: var(--page-max);
-        margin: 0 auto;
-        padding: 28px 20px;
-        box-sizing: border-box;
-    }
-
-    /* Hero */
     body#platform-mobile #mobile-hero {
         display: grid;
         grid-template-columns: 1fr 420px;
@@ -4259,7 +3933,6 @@ body#platform-mobile {
             color: #0666d6;
         }
 
-    /* Card grid for news items */
     body#platform-mobile .card-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -4290,7 +3963,6 @@ body#platform-mobile {
             font-size: 13px;
         }
 
-        /* Inline thumbnail and content layout for list items */
         body#platform-mobile .card[style*="grid-template-columns"] {
             gap: 12px;
             align-items: start;
@@ -4303,7 +3975,6 @@ body#platform-mobile {
             border-radius: 8px;
         }
 
-    /* App store and distribution cards */
     body#platform-mobile #stores .card {
         padding: 12px;
         display: flex;
@@ -4311,7 +3982,6 @@ body#platform-mobile {
         gap: 8px;
     }
 
-    /* Product tiles and links */
     body#platform-mobile .product-tile {
         background: var(--card-bg);
         border-radius: 10px;
@@ -4345,7 +4015,6 @@ body#platform-mobile {
             border-radius: 6px;
         }
 
-    /* Focus */
     body#platform-mobile a:focus,
     body#platform-mobile button:focus,
     body#platform-mobile input:focus,
@@ -4361,7 +4030,6 @@ body#platform-mobile {
         border-radius: 8px;
     }
 
-    /* Small utilities */
     body#platform-mobile .muted {
         color: var(--muted);
     }
@@ -4372,12 +4040,10 @@ body#platform-mobile {
         color: var(--text);
     }
 
-    /* Footer spacing */
     body#platform-mobile .site-footer {
         margin-top: 36px;
     }
 
-/* Responsive */
 @media (max-width: 980px) {
     body#platform-mobile #mobile-hero {
         grid-template-columns: 1fr;
