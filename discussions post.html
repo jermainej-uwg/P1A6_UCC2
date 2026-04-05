@@ -32,7 +32,6 @@
                     <p class="hero-sub">Community posts, tips, and conversations. Share your thoughts below.</p>
 
                     <p style="margin-top:12px;">
-                        <a href="discussions.html">Discussions</a> ·
                         <a href="https://discord.gg/yourserver" target="_blank" rel="noopener noreferrer">Discord</a>
                     </p>
                 </div>
@@ -95,126 +94,7 @@
         </footer>
     </div>
 
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        (function () {
-            const form = document.getElementById('post-form');
-            const postsList = document.getElementById('posts-list');
-            const nameInput = document.getElementById('display-name');
-            const textInput = document.getElementById('post-text');
-            const clearBtn = document.getElementById('clear-btn');
-
-            const STORAGE_KEY = 'yag_discussion_posts_v1';
-
-            function loadPosts() {
-                const raw = localStorage.getItem(STORAGE_KEY);
-                if (!raw) return [];
-                try {
-                    const parsed = JSON.parse(raw);
-                    if (Array.isArray(parsed)) return parsed;
-                } catch (e) { /* ignore parse errors */ }
-                return [];
-            }
-
-            function savePosts(posts) {
-                try {
-                    localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
-                } catch (e) {
-                    console.warn('Could not save posts', e);
-                }
-            }
-
-            function renderPost(post) {
-                const wrapper = document.createElement('article');
-                wrapper.className = 'card';
-                wrapper.style.marginBottom = '12px';
-                wrapper.setAttribute('tabindex', '0');
-
-                const meta = document.createElement('div');
-                meta.style.display = 'flex';
-                meta.style.justifyContent = 'space-between';
-                meta.style.alignItems = 'baseline';
-                meta.style.marginBottom = '8px';
-
-                const author = document.createElement('strong');
-                author.textContent = post.name || 'Anonymous';
-                author.style.fontSize = '15px';
-
-                const time = document.createElement('span');
-                time.className = 'muted';
-                time.style.fontSize = '13px';
-                time.textContent = new Date(post.time).toLocaleString();
-
-                meta.appendChild(author);
-                meta.appendChild(time);
-
-                const body = document.createElement('div');
-                body.style.whiteSpace = 'pre-wrap';
-                body.textContent = post.text;
-
-                wrapper.appendChild(meta);
-                wrapper.appendChild(body);
-
-                return wrapper;
-            }
-
-            function renderAll() {
-                postsList.innerHTML = '';
-                const posts = loadPosts();
-                if (posts.length === 0) {
-                    const empty = document.createElement('div');
-                    empty.className = 'muted';
-                    empty.textContent = 'No posts yet. Be the first to share a tip or question.';
-                    postsList.appendChild(empty);
-                    return;
-                }
-                posts.slice().reverse().forEach(p => {
-                    postsList.appendChild(renderPost(p));
-                });
-            }
-
-            function addPost(name, text) {
-                const posts = loadPosts();
-                posts.push({
-                    name: name ? String(name).trim() : '',
-                    text: String(text).trim(),
-                    time: new Date().toISOString()
-                });
-                savePosts(posts);
-                renderAll();
-                const firstPost = postsList.querySelector('article');
-                if (firstPost) firstPost.focus();
-            }
-
-            form.addEventListener('submit', function (e) {
-                e.preventDefault();
-                const text = textInput.value.trim();
-                if (!text) {
-                    textInput.focus();
-                    return;
-                }
-                addPost(nameInput.value.trim(), text);
-                textInput.value = '';
-                textInput.focus();
-            });
-
-            clearBtn.addEventListener('click', function () {
-                if (!confirm('Clear all local discussion posts? This cannot be undone.')) return;
-                localStorage.removeItem(STORAGE_KEY);
-                renderAll();
-            });
-
-            textInput.addEventListener('keydown', function (e) {
-                if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
-                    e.preventDefault();
-                    form.dispatchEvent(new Event('submit', { cancelable: true }));
-                }
-            });
-
-            renderAll();
-        })();
-    </script>
+    <script src="discussions.js" defer></script>
 </body>
 </html>
 
