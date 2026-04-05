@@ -30,25 +30,11 @@
                 <div class="hero-content">
                     <h1 id="cu-title" class="hero-title">Content Creator Updates</h1>
                     <p class="hero-sub">Latest posts, stream schedules, patch reactions, and creator highlights from the community.</p>
-                    <p style="margin-top:12px;">
-                        <a href="news.html">News</a>
-                    </p>
                 </div>
 
                 <div class="hero-media" aria-hidden="true">
                     <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='260'><rect width='100%' height='100%' fill='%23eef6f9'/><text x='50%' y='50%' fill='%230b1220' font-size='16' font-family='Arial' dominant-baseline='middle' text-anchor='middle'>Creator updates hero</text></svg>" alt="Creator updates hero" style="border-radius:8px;">
                 </div>
-            </section>
-
-            <section class="content-section" aria-labelledby="subscribe-heading" style="margin-top:18px;">
-                <h2 id="subscribe-heading" class="section-title">Stay in the loop</h2>
-                <p class="muted">Subscribe for weekly creator roundups and stream alerts.</p>
-
-                <form class="subscribe-form" style="margin-top:12px; max-width:720px; display:flex; gap:10px; align-items:center;">
-                    <label for="email" class="muted" style="display:none;">Email address</label>
-                    <input id="email" type="email" placeholder="you@example.com" aria-label="Email address for subscription" required style="flex:1; padding:10px 12px; border-radius:8px; border:1px solid rgba(11,17,32,0.06);">
-                    <button type="submit" class="btn primary" style="padding:10px 14px; border-radius:8px;">Subscribe</button>
-                </form>
             </section>
 
             <section id="updates" class="content-section" aria-labelledby="updates-heading" style="margin-top:24px;">
@@ -138,24 +124,6 @@
             </div>
         </footer>
     </div>
-
-    <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    document.querySelectorAll('.subscribe-form').forEach(form => {
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        const email = form.querySelector('#email')?.value || '';
-        if (!email) {
-          alert('Please enter a valid email address.');
-          return;
-          }
-
-        alert('Thanks — you are subscribed (placeholder).');
-        form.reset();
-      });
-    });
-    </script>
 </body>
 </html>
 
