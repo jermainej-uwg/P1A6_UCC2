@@ -1,0 +1,154 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>YourAverageGamer — Achievements</title>
+    <meta name="description" content="Achievement checklists, step-by-step guides, and completion tips." />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body id="achievements" class="no-buttons">
+    <div class="site">
+        <header class="site-header">
+            <div class="brand">
+                <div class="brand-text">
+                    <div class="site-title">YourAverageGamer</div>
+                    <div class="site-sub">Company Slogan/Motto</div>
+                </div>
+            </div>
+
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="multimedia.html">Multimedia</a>
+                <a class="nav-link" href="news.html">News</a>
+                <a class="nav-link" href="discussions.html">Discussions</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero" id="achieve-hero" aria-labelledby="achieve-title">
+                <div class="hero-content">
+                    <h1 id="achieve-title" class="hero-title">Achievements</h1>
+                    <p class="hero-sub">Checklists, step sequences, and tips to help you unlock every achievement.</p>
+
+                    <p style="margin-top:12px;">
+                        <a href="walkthroughs.html">Walkthroughs</a> ·
+                        <a href="guides.html">Guides</a>
+                    </p>
+                </div>
+
+                <div class="hero-media" aria-hidden="true">
+                    <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='260'><rect width='100%' height='100%' fill='%23f6f9fb'/><text x='50%' y='50%' fill='%230b1220' font-size='16' font-family='Arial' dominant-baseline='middle' text-anchor='middle'>Achievements hero image</text></svg>" alt="Achievements hero">
+                </div>
+            </section>
+
+            <section id="overview" class="achieve-section" aria-labelledby="overview-heading">
+                <h2 id="overview-heading" class="section-title">Overview</h2>
+                <p class="muted">Organized achievement lists, difficulty tags, and recommended order-of-operations to minimize backtracking.</p>
+            </section>
+
+            <section id="filters" class="achieve-section" aria-labelledby="filters-heading" style="margin-top:18px;">
+                <h2 id="filters-heading" class="section-title">Filters</h2>
+                <div class="filters" role="toolbar" aria-label="Achievement filters">
+                    <button type="button" aria-pressed="false">All</button>
+                    <button type="button" aria-pressed="false">Story</button>
+                    <button type="button" aria-pressed="false">Exploration</button>
+                    <button type="button" aria-pressed="false">Challenges</button>
+                    <button type="button" aria-pressed="false">Time-limited</button>
+                </div>
+            </section>
+
+            <section id="featured" class="achieve-section" aria-labelledby="featured-heading" style="margin-top:20px;">
+                <h2 id="featured-heading" class="section-title">Featured Achievements</h2>
+                <div class="achieve-grid" style="margin-top:12px;">
+                    <article class="achieve-card">
+                        <div class="thumb" aria-hidden="true">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%' height='100%' fill='%23121a2a'/><text x='50%' y='50%' fill='%23fff' font-size='16' font-family='Arial' dominant-baseline='middle' text-anchor='middle'>Master Collector</text></svg>" alt="Master Collector">
+                        </div>
+                        <div class="achieve-meta">
+                            <h3>Master Collector</h3>
+                            <p class="muted">Collect every region-specific artifact. Estimated time: 3–5 hours. Tips: follow the region order to avoid backtracking.</p>
+                        </div>
+                    </article>
+
+                    <article class="achieve-card">
+                        <div class="thumb" aria-hidden="true">
+                            <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='180'><rect width='100%' height='100%' fill='%23121a2a'/><text x='50%' y='50%' fill='%23fff' font-size='16' font-family='Arial' dominant-baseline='middle' text-anchor='middle'>Speed Demon</text></svg>" alt="Speed Demon">
+                        </div>
+                        <div class="achieve-meta">
+                            <h3>Speed Demon</h3>
+                            <p class="muted">Complete the main story under 4 hours. Recommended: skip optional dialogue, use fast-travel routes, and follow the speedrun routing checklist.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="checklists" class="achieve-section" aria-labelledby="checklists-heading" style="margin-top:20px;">
+                <h2 id="checklists-heading" class="section-title">Checklists</h2>
+
+                <article class="checklist" style="margin-top:12px;">
+                    <h3>Completionist Checklist</h3>
+                    <ol>
+                        <li>Finish main story on any difficulty.</li>
+                        <li>Collect all region artifacts (follow region order).</li>
+                        <li>Complete all faction reputation lines.</li>
+                        <li>Unlock all vendor-exclusive items.</li>
+                        <li>Finish all time-limited events (if available).</li>
+                    </ol>
+                </article>
+
+                <article class="checklist" style="margin-top:12px;">
+                    <h3>Challenge Achievements</h3>
+                    <ul>
+                        <li>Defeat the Iron Sentinel without taking damage (practice phase patterns).</li>
+                        <li>Complete the gauntlet under 10 minutes (recommended loadout: high mobility).</li>
+                        <li>Find and activate all hidden shrines in a single run.</li>
+                    </ul>
+                </article>
+            </section>
+        </main>
+
+        <footer class="site-footer" aria-label="Footer">
+            <div class="footer-brand">
+                <div class="site-title">YourAverageGamer</div>
+                <div class="muted">© <span id="year"></span> YourAverageGamer</div>
+            </div>
+
+            <div class="footer-columns">
+                <div class="footer-col">
+                    <h5>Topic</h5>
+                    <a class="footer-link" href="#">Page</a>
+                    <a class="footer-link" href="#">Page</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Topic</h5>
+                    <a class="footer-link" href="#">Page</a>
+                    <a class="footer-link" href="#">Page</a>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Topic</h5>
+                    <a class="footer-link" href="#">Page</a>
+                    <a class="footer-link" href="#">Page</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    (function () {
+      const links = document.querySelectorAll('.main-nav .nav-link');
+      const current = decodeURIComponent(location.pathname.split('/').pop() || 'index.html');
+      links.forEach(a => {
+        const href = a.getAttribute('href');
+        if (!href) return;
+        if (href === current) a.classList.add('active');
+      });
+    })();
+    </script>
+</body>
+</html>
+
