@@ -32,10 +32,9 @@ html, body {
 
 .site-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 16px;
-    margin-bottom: 28px;
+    gap: 32px;
 }
 
 .brand {
@@ -53,27 +52,79 @@ html, body {
     color: var(--muted);
 }
 
-
 .main-nav {
     display: flex;
-    gap: 18px;
-    flex: 1 1 auto;
-    justify-content: flex-end;
-    align-items: center;
+    gap: 1rem;
+    padding: 0;
+    background: transparent;
+    position: relative;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: 150px;
 }
 
-.nav-link {
-    color: var(--muted);
-    text-decoration: none;
-    padding: 8px 10px;
-    border-radius: 8px;
-    font-weight: 600;
-}
 
-    .nav-link:hover {
+    .main-nav a {
         color: var(--text);
-        background: var(--glass);
+        text-decoration: none;
+        padding: 0.5rem 0.75rem;
+        display: block;
+        white-space: nowrap;
     }
+
+.nav-group {
+    position: relative;
+}
+
+.sub-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--card);
+    padding: 0.5rem 0;
+    min-width: 200px;
+    white-space: nowrap;
+    z-index: 9999;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 6px;
+}
+
+    .sub-nav a {
+        padding: 0.5rem 1rem;
+        color: var(--text);
+    }
+
+        .sub-nav a:hover {
+            background: var(--glass);
+            color: var(--accent);
+        }
+
+.nav-group:hover > .sub-nav {
+    display: block;
+}
+
+.sub-nav .nav-group {
+    position: relative;
+}
+
+    .sub-nav .nav-group .sub-nav {
+        top: 0;
+        left: 100%;
+    }
+
+    .sub-nav .nav-group:hover > .sub-nav {
+        left: auto;
+        right: 100%;
+    }
+
+.main-nav {
+    overflow: visible;
+}
+
 
 .hero {
     display: grid;
