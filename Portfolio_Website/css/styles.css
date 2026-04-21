@@ -84,7 +84,7 @@ html, body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--card);
+    background: var(--card, #ffffff);
     padding: 0.5rem 0;
     min-width: 200px;
     white-space: nowrap;
@@ -100,7 +100,7 @@ html, body {
 
         .sub-nav a:hover {
             background: var(--glass);
-            color: var(--accent);
+            color: #ff0000;
         }
 
 .nav-group:hover > .sub-nav {
@@ -124,7 +124,6 @@ html, body {
 .main-nav {
     overflow: visible;
 }
-
 
 .hero {
     display: grid;
