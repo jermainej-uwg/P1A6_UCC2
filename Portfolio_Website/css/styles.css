@@ -84,7 +84,7 @@ html, body {
     position: absolute;
     top: 100%;
     left: 0;
-    background: var(--card, #ffffff);
+    background: #000;
     padding: 0.5rem 0;
     min-width: 200px;
     white-space: nowrap;
@@ -95,7 +95,7 @@ html, body {
 
     .sub-nav a {
         padding: 0.5rem 1rem;
-        color: var(--text);
+        color: #000;
     }
 
         .sub-nav a:hover {
@@ -2355,7 +2355,7 @@ body#pictures {
     --accent: #c62828;
     --muted: #6b7280;
     --card: #ffffff;
-    --text: #0b1220;
+    --text: #ffffff;
 }
 
     body#pictures #pictures-hero {
@@ -2373,11 +2373,11 @@ body#pictures {
     body#pictures .hero-title {
         font-size: 36px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#pictures .hero-sub {
-        color: var(--muted);
+        color: #ffffff;
         margin-top: 8px;
     }
 
@@ -2547,11 +2547,11 @@ body#game-trailers {
     body#game-trailers .hero-title {
         font-size: 36px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#game-trailers .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -2681,11 +2681,11 @@ body#gameplay-breakdown {
     body#gameplay-breakdown .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#gameplay-breakdown .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -2859,11 +2859,11 @@ body#creator-updates {
     body#creator-updates .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#creator-updates .hero-sub {
-        color: var(--muted);
+        color: #ffffff;
         margin-top: 8px;
     }
 
@@ -3009,11 +3009,11 @@ body#game-releases {
     body#game-releases .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#game-releases .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -3146,11 +3146,11 @@ body#platforms {
     body#platforms .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#platforms .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -3298,11 +3298,11 @@ body#platform-pc {
     body#platform-pc .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#platform-pc .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -3426,11 +3426,11 @@ body#platform-xbox {
     body#platform-xbox .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#platform-xbox .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -3605,11 +3605,11 @@ body#platform-playstation {
     body#platform-playstation .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#platform-playstation .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -3784,11 +3784,11 @@ body#platform-nintendo {
     body#platform-nintendo .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#platform-nintendo .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
@@ -3963,11 +3963,11 @@ body#platform-mobile {
     body#platform-mobile .hero-title {
         font-size: 34px;
         margin: 0;
-        color: var(--text);
+        color: #ffffff;
     }
 
     body#platform-mobile .hero-sub {
-        color: var(--muted);
+        color: #b0b0b0;
         margin-top: 8px;
     }
 
