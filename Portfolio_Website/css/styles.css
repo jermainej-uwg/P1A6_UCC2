@@ -4125,3 +4125,37 @@ body#platform-mobile {
         padding: 12px;
     }
 }
+
+/* Smokey gray body */
+body {
+    background-color: #2f2f2f;
+    color: #ffffff;
+}
+
+/* Header */
+.site-header {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 15px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-header a {
+    color: #ffffff;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* Footer */
+.site-footer {
+    background-color: #000000;
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}
